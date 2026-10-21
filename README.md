@@ -123,7 +123,7 @@ Untuk menerapkan seluruh label di atas ke repositori GitHub Anda secara otomatis
 3. Jalankan perintah berikut:
 
 ```powershell
-.\scripts\setup_github_labels.ps1 -RepoOwner "USERNAME_GITHUB_ANDA" -RepoName "NAMA_REPO_ANDA" -Token "ghp_TOKEN_GITHUB_ANDA"
+.\scripts\setup_github_labels.ps1 -RepoOwner "Bagas-Fomo1" -RepoName "UTS-PPL-Kelompok-3-Keranjang-Checkout" -Token "ghp_TOKEN_GITHUB_ANDA"
 ```
 
 Seluruh 23 label akan dibuat dan diberi kode warna otomatis dalam hitungan detik.
