@@ -1,0 +1,210 @@
+name: "🐞 Bug Report (Laporan Cacat)"
+description: "Laporkan temuan bug pada aplikasi CilacapTools (with-bugs.practicesoftwaretesting.com)"
+title: "[BUG-XXX]: [English Title] / [Judul Bahasa Indonesia]"
+labels: ["status: unconfirmed", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### 📋 Standar Pelaporan Bug - Kelompok 3 (CilacapTools)
+        Sebelum mengisi, pastikan bug ini:
+        1. **Dapat direproduksi** hanya dari langkah yang Anda tulis.
+        2. **Bukan duplikat** dari issue yang sudah dilaporkan sebelumnya.
+        3. **Berbeda dari acuan**: Perilaku pada versi tanpa bug (`practicesoftwaretesting.com`) wajib dijadikan acuan perilaku benar pada *Expected Result*.
+        4. Setiap anggota wajib menjadi penulis minimal **2 issue**.
+
+  - type: input
+    id: bug_id
+    attributes:
+      label: "ID Bug"
+      description: "Nomor urut bug kelompok (contoh: BUG-001, BUG-002, dst.)"
+      placeholder: "BUG-001"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: reporter_role
+    attributes:
+      label: "Role Pelapor"
+      description: "Pilih peran Anda dalam tim"
+      options:
+        - "R1 - QA Lead & Test Manager"
+        - "R2 - Test Analyst"
+        - "R3 - Exploratory Tester"
+        - "R4 - Compatibility & Accessibility Tester"
+        - "R5 - Defect Management Engineer"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: feature_area
+    attributes:
+      label: "Area / Fitur Terdampak"
+      description: "Pilih area fokus atau umum yang mengalami bug"
+      options:
+        - "Keranjang (Cart)"
+        - "Checkout - Alur Pengiriman & Alamat"
+        - "Checkout - Alur Pembayaran & Kalkulasi Total"
+        - "Checkout - Konfirmasi & Invoice"
+        - "Autentikasi (Login / Logout)"
+        - "Beranda (Home)"
+        - "Lainnya"
+    validations:
+      required: true
+
+  - type: input
+    id: affected_url
+    attributes:
+      label: "URL Halaman Terdampak"
+      description: "Alamat URL spesifik tempat bug ditemukan"
+      placeholder: "https://with-bugs.practicesoftwaretesting.com/#/checkout"
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: "Lingkungan Pengujian (Environment)"
+      description: "Sebutkan spesifikasi perangkat, browser, dan resolusi layar yang digunakan"
+      value: |
+        - **OS**: Windows 11 / macOS / Android / iOS
+        - **Browser**: Google Chrome 129 / Mozilla Firefox 131 / Microsoft Edge 129
+        - **Resolusi / Viewport**: Desktop (1920x1080) / Mobile (375x667 / 390x844 / 412x915 / 820x1180)
+        - **Build**: Staging Sprint 5 (AUT with-bugs)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: "Severity (Tingkat Keparahan Dampak Teknis)"
+      description: "Pilih tingkat keparahan teknis bug terhadap fungsionalitas sistem"
+      options:
+        - "Critical (Sistem crash, data hilang, transaksi/checkout gagal total tanpa workaround)"
+        - "Major (Fungsi utama gagal atau salah kalkulasi harga/diskon, tetapi ada workaround rumit)"
+        - "Minor (Fitur sekunder gagal, masalah layout/tampilan fungsional, salah pesan validasi)"
+        - "Trivial (Typo teks, inkonsistensi visual minor, estetika kecil yang tidak ganggu fungsi)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: severity_reason
+    attributes:
+      label: "Alasan Pemilihan Severity"
+      description: "Jelaskan mengapa severity tersebut dipilih berdasarkan dampaknya pada sistem/pengguna"
+      placeholder: "Contoh: Bug ini dikategorikan Critical karena saat tombol 'Proceed to Checkout' diklik, halaman mengalami infinite loading sehingga pengguna tidak dapat melanjutkan pembelian."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "Priority (Prioritas Perbaikan Bisnis)"
+      description: "Pilih seberapa mendesak bug ini harus diperbaiki oleh developer"
+      options:
+        - "P1 - Urgent (Blokir rilis, quality gate gagal jika masih open, harus diperbaiki segera)"
+        - "P2 - High (Mempengaruhi pengalaman inti pelanggan, harus diperbaiki sebelum rilis)"
+        - "P3 - Medium (Dapat ditunda ke sprint rilis berikutnya/patch update)"
+        - "P4 - Low (Perbaikan kosmetik/nice-to-have, prioritas paling rendah)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: priority_reason
+    attributes:
+      label: "Alasan Pemilihan Priority"
+      description: "Jelaskan mengapa priority tersebut dipilih berdasarkan urgensi bisnis CilacapTools"
+      placeholder: "Contoh: P1 karena melanggar Quality Gate CilacapTools Sprint 5 yang mewajibkan alur checkout sukses 100%."
+    validations:
+      required: true
+
+  - type: input
+    id: kiwi_tcms_link
+    attributes:
+      label: "Tautan Test Case & Eksekusi FAIL di Kiwi TCMS"
+      description: "Tautkan ID test case dan URL eksekusi FAIL di Kiwi TCMS (Wajib diisi sesuai Tugas T8)"
+      placeholder: "https://reg-beings-nurse-month.trycloudflare.com/runs/XX/executions/YY/ (Test Case ID: TR-XX)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: preconditions
+    attributes:
+      label: "Prasyarat (Pre-conditions)"
+      description: "Kondisi awal sebelum langkah pengujian dilakukan"
+      placeholder: |
+        1. Pengguna telah login dengan akun valid (dummy user: customer@practicesoftwaretesting.com).
+        2. Terdapat minimal 1 item produk di dalam keranjang belanja.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps_to_reproduce
+    attributes:
+      label: "Langkah-Langkah Reproduksi (Steps to Reproduce)"
+      description: "Langkah terperinci nomor demi nomor agar siapapun dapat mereproduksi bug ini"
+      placeholder: |
+        1. Buka halaman utama https://with-bugs.practicesoftwaretesting.com
+        2. Masuk ke halaman detail produk 'Combination Pliers'.
+        3. Klik tombol 'Add to cart'.
+        4. Klik ikon keranjang belanja di pojok kanan atas.
+        5. Klik tombol 'Proceed to checkout'.
+        6. Perhatikan apa yang terjadi pada kalkulasi total harga.
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual_result
+    attributes:
+      label: "Hasil Aktual (Actual Result pada AUT with-bugs)"
+      description: "Perilaku cacat atau pesan kesalahan yang sebenarnya terjadi"
+      placeholder: "Total harga pada keranjang menampilkan NaN atau kalkulasi salah tidak sesuai dengan jumlah item x harga satuan."
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_result
+    attributes:
+      label: "Hasil yang Diharapkan (Expected Result pada acuan normal)"
+      description: "Perilaku yang benar mengacu pada https://practicesoftwaretesting.com atau aturan UI"
+      placeholder: "Total harga harus dihitung secara akurat (Qty * Price) seperti pada versi acuan https://practicesoftwaretesting.com."
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: "Bukti / Evidence (Screenshot / Recording / Log Console)"
+      description: "Lampirkan screenshot layar penuh (pola: BUG-001_judul-singkat.png), video interaksi, atau log console jika ada JavaScript error"
+      placeholder: |
+        - Screenshot: evidence-uts/screenshots/BUG-001_kalkulasi-total-nan.png (atau seret gambar ke sini)
+        - Console Error: Uncaught TypeError: Cannot read property 'price' of undefined
+    validations:
+      required: true
+
+  - type: textarea
+    id: triage_notes
+    attributes:
+      label: "Catatan Notulen Triage Meeting (Diisi oleh R5/R1 saat Triage)"
+      description: "Catatan revisi severity, priority, atau klarifikasi bug saat rapat triage (2-3 kalimat)"
+      placeholder: "Bug diverifikasi dan dikonfirmasi oleh tim triage pada tanggal DD/MM/2026. Severity disepakati Major karena menghambat verifikasi nilai transaksi, Priority P1 karena merupakan alur inti checkout."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: validation_checklist
+    attributes:
+      label: "Checklist Validasi Kualitas Bug Report (Verifikasi R5)"
+      options:
+        - label: "Bug ini dapat direproduksi oleh anggota lain hanya dari langkah tertulis di atas."
+          required: true
+        - label: "Hasil di versi tanpa cacat (practicesoftwaretesting.com) telah dicantumkan di Expected Result."
+          required: true
+        - label: "Bukan duplikat dari issue lain (akar masalah yang sama digabung jadi satu)."
+          required: true
+        - label: "Telah melampirkan screenshot layar penuh / video / log console."
+          required: true
+        - label: "Severity dan Priority memiliki alasan yang jelas dan objektif."
+          required: true
+        - label: "Tautan ke eksekusi FAIL di Kiwi TCMS telah dicantumkan."
+          required: true

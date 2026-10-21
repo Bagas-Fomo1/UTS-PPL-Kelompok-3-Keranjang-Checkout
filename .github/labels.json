@@ -1,0 +1,127 @@
+[
+  {
+    "name": "severity: critical",
+    "color": "b60205",
+    "description": "Sistem crash, data hilang, transaksi checkout gagal total tanpa workaround"
+  },
+  {
+    "name": "severity: major",
+    "color": "d93f0b",
+    "description": "Fungsi utama gagal atau salah kalkulasi harga/diskon, ada workaround rumit"
+  },
+  {
+    "name": "severity: minor",
+    "color": "fbca04",
+    "description": "Fungsi sekunder gagal, masalah layout/tampilan fungsional, salah pesan validasi"
+  },
+  {
+    "name": "severity: trivial",
+    "color": "0e8a16",
+    "description": "Typo teks, inkonsistensi visual minor, estetika kecil yang tidak ganggu fungsi"
+  },
+  {
+    "name": "priority: P1",
+    "color": "7e0018",
+    "description": "Urgent - Memblokir Quality Gate (harus lulus sebelum rilis)"
+  },
+  {
+    "name": "priority: P2",
+    "color": "e11d48",
+    "description": "High - Mempengaruhi pengalaman inti checkout, wajib selesai sebelum rilis"
+  },
+  {
+    "name": "priority: P3",
+    "color": "f59e0b",
+    "description": "Medium - Masalah sekunder, dapat dijadwalkan pada sprint berikutnya"
+  },
+  {
+    "name": "priority: P4",
+    "color": "64748b",
+    "description": "Low - Perbaikan kosmetik / nice to have"
+  },
+  {
+    "name": "area: keranjang",
+    "color": "1d76db",
+    "description": "Bug pada halaman/fitur keranjang belanja (tambah, ubah qty, hapus item)"
+  },
+  {
+    "name": "area: checkout",
+    "color": "5319e7",
+    "description": "Bug pada alur checkout (alamat, pengiriman, metode pembayaran, kalkulasi total)"
+  },
+  {
+    "name": "area: login-auth",
+    "color": "0052cc",
+    "description": "Bug pada alur wajib login dan registrasi akun"
+  },
+  {
+    "name": "area: beranda",
+    "color": "006b75",
+    "description": "Bug pada halaman Beranda (Home)"
+  },
+  {
+    "name": "area: kompatibilitas",
+    "color": "bfdadc",
+    "description": "Temuan cross-browser (Chrome, Firefox, Edge) atau responsivitas layar (T6)"
+  },
+  {
+    "name": "area: aksesibilitas",
+    "color": "d4c5f9",
+    "description": "Temuan audit aksesibilitas (axe, WAVE, Lighthouse, keyboard sweep T7)"
+  },
+  {
+    "name": "status: unconfirmed",
+    "color": "e4e669",
+    "description": "Issue baru dilaporkan, menunggu review kualitas oleh R5"
+  },
+  {
+    "name": "status: confirmed",
+    "color": "0e8a16",
+    "description": "Bug telah diverifikasi valid dan dapat direproduksi"
+  },
+  {
+    "name": "status: under-triage",
+    "color": "fbca04",
+    "description": "Sedang dibahas dalam Triage Meeting untuk penentuan severity/priority"
+  },
+  {
+    "name": "status: verified-in-kiwi",
+    "color": "2ea44f",
+    "description": "Telah ditautkan ke eksekusi FAIL di Kiwi TCMS"
+  },
+  {
+    "name": "status: rejected-duplicate",
+    "color": "cfd3d7",
+    "description": "Ditolak karena duplikat dengan issue lain"
+  },
+  {
+    "name": "status: rejected-not-a-bug",
+    "color": "cfd3d7",
+    "description": "Ditolak karena perilaku sama persis dengan versi tanpa bug (oracle)"
+  },
+  {
+    "name": "role: R1-Lead",
+    "color": "0366d6",
+    "description": "Dilaporkan oleh R1 (QA Lead & Test Manager)"
+  },
+  {
+    "name": "role: R2-Analyst",
+    "color": "0366d6",
+    "description": "Dilaporkan oleh R2 (Test Analyst)"
+  },
+  {
+    "name": "role: R3-Exploratory",
+    "color": "0366d6",
+    "description": "Dilaporkan oleh R3 (Exploratory Tester)"
+  },
+  {
+    "name": "role: R4-Compatibility",
+    "color": "0366d6",
+    "description": "Dilaporkan oleh R4 (Compatibility & Accessibility Tester)"
+  },
+  {
+    "name": "role: R5-DefectManager",
+    "color": "0366d6",
+    "description": "Dilaporkan oleh R5 (Defect Management Engineer)"
+  }
+]

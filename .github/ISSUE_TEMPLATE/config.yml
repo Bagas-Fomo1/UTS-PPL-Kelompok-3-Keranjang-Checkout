@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📘 Panduan Manajemen Cacat (Defect Management Guidelines)
+    url: https://github.com
+    about: Baca panduan penentuan Severity, Priority, dan standar evidence sebelum membuat issue.
+  - name: 🌐 Kiwi TCMS Dashboard Kelompok 3
+    url: https://reg-beings-nurse-month.trycloudflare.com
+    about: Akses test plan, test runs, dan tautan eksekusi test case di Kiwi TCMS.
