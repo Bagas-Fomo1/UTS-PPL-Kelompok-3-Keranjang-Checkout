@@ -1,0 +1,85 @@
+name: "📝 SBTM Session Notes (Catatan Sesi Pengujian)"
+description: "Dokumentasi hasil eksekusi sesi SBTM 30 menit beserta rasio waktu 100% (Tugas T5 - R3)"
+title: "[SESSION-NOTES-XX]: Sesi SBTM [ID Charter] oleh [Nama Tester]"
+labels: ["sbtm:session-notes", "status:verified"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### 📝 Catatan Sesi Pengujian Eksploratif (SBTM Session Notes - T5)
+        Sesuai ketentuan soal ujian:
+        1. Durasi: **Time-boxed 30 menit**.
+        2. Rasio Waktu wajib berjumlah **100%**:
+           - **Session Setup** (% waktu persiapan data/lingkungan)
+           - **Test Design & Execution / On-Charter** (% waktu pengujian aktif fokus misi)
+           - **Bug Investigation / Opportunity** (% waktu investigasi cacat di luar charter)
+        3. Maksimal **2 bug** dieskalasi per sesi.
+
+  - type: input
+    id: charter_reference
+    attributes:
+      label: "Referensi ID Charter"
+      placeholder: "CHR-001 (atau Issue #XX)"
+    validations:
+      required: true
+
+  - type: input
+    id: tester_name
+    attributes:
+      label: "Nama Penguji (Tester)"
+      placeholder: "Nama Tester"
+    validations:
+      required: true
+
+  - type: input
+    id: session_duration
+    attributes:
+      label: "Waktu Mulai & Selesai (Time-Boxed 30 Menit)"
+      placeholder: "21 Oktober 2026, 14:00 - 14:30 WIB (30 Menit)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: time_breakdown
+    attributes:
+      label: "Rasio Alokasi Waktu (Wajib Total 100%)"
+      description: "Tentukan persentase alokasi waktu selama 30 menit sesi"
+      value: |
+        - **Session Setup**: 15% (4.5 menit)
+        - **Test Execution (On-Charter)**: 65% (19.5 menit)
+        - **Bug Investigation (Opportunity)**: 20% (6.0 menit)
+        - **TOTAL**: 100%
+    validations:
+      required: true
+
+  - type: textarea
+    id: test_notes
+    attributes:
+      label: "Catatan Eksekusi Pengujian (Test Execution Notes)"
+      placeholder: |
+        - Menambahkan produk Combination Pliers ke keranjang, kuantitas 1 berhasil.
+        - Mengubah kuantitas menjadi 0: sistem tidak otomatis menghapus item, melainkan tetap menampilkan item dengan subtotal $0.
+        - Mengisi form alamat dengan nama panjang (>300 char): tidak ada pemotongan string.
+    validations:
+      required: true
+
+  - type: textarea
+    id: bugs_escalated
+    attributes:
+      label: "Bug yang Dieskalasi (Maksimal 2 Bug per Sesi)"
+      description: "Tautkan nomor issue GitHub bug yang dieskalasi ke Test Lead (R1)"
+      placeholder: |
+        1. BUG-001: Total Cart Calculation Displays NaN (#1)
+        2. BUG-004: Cart Items Duplicated on Page Refresh (#4)
+    validations:
+      required: true
+
+  - type: textarea
+    id: debrief_notes
+    attributes:
+      label: "Hasil Debrief dengan Test Lead (R1)"
+      description: "Catatan diskusi debrief antara R3 dan R1 mengenai temuan sesi"
+      placeholder: |
+        Test Lead (R1) menyetujui eskalasi 2 bug di atas. Bug pertama dikategorikan Major/P1 karena merusak alur checkout, bug kedua dikategorikan Major/P2.
+    validations:
+      required: true

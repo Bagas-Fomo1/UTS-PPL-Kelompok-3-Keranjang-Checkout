@@ -61,6 +61,56 @@ body:
     validations:
       required: true
 
+  - type: dropdown
+    id: testing_technique
+    attributes:
+      label: "Teknik Pengujian yang Digunakan"
+      description: "Pilih teknik pengujian yang mengungkap cacat ini (sesuai modul perkuliahan)"
+      options:
+        - "Equivalence Partitioning (T2)"
+        - "Boundary Value Analysis (T2)"
+        - "Error Guessing (T3)"
+        - "Negative Testing (T3)"
+        - "Edge Case Testing (T3)"
+        - "Exploratory Testing / SBTM (T5)"
+        - "Cross-Browser Testing (T6)"
+        - "Mobile Responsive Testing (T6)"
+        - "Accessibility Audit (T7)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: defect_type
+    attributes:
+      label: "Tipe / Klasifikasi Cacat (Defect Type)"
+      description: "Pilih jenis cacat teknis"
+      options:
+        - "Financial Calculation (Salah perhitungan subtotal, diskon, atau total)"
+        - "Functional Bug (Logika bisnis atau alur fitur gagal)"
+        - "State Management (Keranjang/sesi tidak sinkron, reload error)"
+        - "Data Validation (Validasi input form/karakter tidak tepat)"
+        - "Crash / Unhandled Exception (Halaman blank, console error JS, freeze)"
+        - "UI / UX Defect (Tampilan berantakan, CSS rusak, alignment meleset)"
+        - "Compatibility (Perbedaan tampilan/perilaku antar browser atau viewport)"
+        - "Accessibility Barrier (Melanggar WCAG 2.2 / sulit diakses screen reader/keyboard)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: sbtm_charter
+    attributes:
+      label: "Referensi Test Charter (Khusus Temuan SBTM T5)"
+      description: "Pilih charter terkait jika bug ini ditemukan saat sesi Exploratory Testing"
+      options:
+        - "Bukan Temuan SBTM (Pengujian Terstruktur T2/T3/T4/T6/T7)"
+        - "CHR-001: Eksplorasi Alur Keranjang Belanja & Kuantitas Item"
+        - "CHR-002: Eksplorasi Alur Checkout & Kalkulasi Pembayaran"
+        - "CHR-003: Eksplorasi Autentikasi Login & Persistensi Keranjang"
+        - "CHR-004: Eksplorasi Form Validasi Checkout & Alamat Pengiriman"
+        - "CHR-005: Eksplorasi Responsivitas Checkout pada Layar Tersempit"
+    validations:
+      required: false
+
   - type: textarea
     id: environment
     attributes:

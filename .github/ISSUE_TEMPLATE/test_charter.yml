@@ -1,0 +1,71 @@
+name: "🎯 SBTM Test Charter (Misi Eksplorasi)"
+description: "Mendefinisikan charter eksploratori terstruktur untuk pengujian SBTM (Tugas T5 - R3)"
+title: "[CHARTER-XX]: Eksplorasi [Fitur/Modul] untuk Menemukan [Tujuan Pengujian]"
+labels: ["sbtm:test-charter", "status:triaged"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### 🎯 Misi Pengujian Eksploratif (Session-Based Test Management - T5)
+        Template ini digunakan oleh **R3 (Exploratory Tester)** untuk mendokumentasikan *Test Charter* pengujian time-boxed (30 menit).
+
+  - type: input
+    id: charter_id
+    attributes:
+      label: "ID Charter"
+      description: "Contoh: CHR-001, CHR-002"
+      placeholder: "CHR-001"
+    validations:
+      required: true
+
+  - type: input
+    id: tester_name
+    attributes:
+      label: "Nama Penguji (Tester)"
+      description: "Nama anggota tim yang mengeksekusi sesi ini"
+      placeholder: "Nama Tester (R3)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: charter_area
+    attributes:
+      label: "Area / Modul Target"
+      options:
+        - "Keranjang Belanja (module:cart)"
+        - "Checkout Step 1 - Alamat & Info (module:checkout-step-one)"
+        - "Checkout Step 2 - Pembayaran & Total (module:checkout-step-two)"
+        - "Checkout Step 3 - Konfirmasi & Invoice (module:checkout-complete)"
+        - "Autentikasi Login & State Keranjang (module:login)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: mission
+    attributes:
+      label: "Misi Eksplorasi (Charter Mission)"
+      description: "Jelaskan APA yang diuji, DENGAN APA, dan UNTUK MENEMUKAN APA"
+      placeholder: |
+        Eksplorasi kalkulasi total keranjang dan perubahan kuantitas item menggunakan kombinasi batas kuantitas dan manipulasi nilai mata uang untuk menemukan potensi anomali kalkulasi finansial (NaN / pembulatan salah).
+    validations:
+      required: true
+
+  - type: textarea
+    id: test_data
+    attributes:
+      label: "Data Uji yang Disiapkan (Test Data)"
+      placeholder: |
+        - Akun: customer@practicesoftwaretesting.com / welcome01
+        - Produk: Combination Pliers ($14.15), Bolt Cutters ($48.41)
+        - Variasi Kuantitas: 0, 1, 99, 100, -1, karakter non-numerik
+    validations:
+      required: true
+
+  - type: textarea
+    id: kiwi_p2_link
+    attributes:
+      label: "Pendaftaran Test Case di Kiwi TCMS (Kategori Exploratory P2)"
+      description: "Sesuai soal T5: Charter wajib didaftarkan sebagai test case kategori Exploratory (P2) di Kiwi TCMS"
+      placeholder: "ID Test Case Kiwi: TC-040 (URL Test Case di Kiwi TCMS)"
+    validations:
+      required: true
