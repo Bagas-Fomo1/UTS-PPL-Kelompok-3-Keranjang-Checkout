@@ -79,38 +79,47 @@ Pemilik toko CilacapTools menetapkan aturan ketat sebelum produk boleh dirilis k
 
 ## 🏷️ Sistem Label Repositori (Defect Tracking Labels)
 
-Repositori ini telah dilengkapi skema label terstandar untuk memfasilitasi *triaging* yang efisien:
+Repositori ini telah disempurnakan dengan **82 label bersih terstandar** (bebas duplikasi dan tanpa residu proyek lain) khusus untuk **CilacapTools: Keranjang & Checkout**:
 
 ### 1. Tingkat Keparahan Teknis (Severity)
-* `severity: critical` (Merah Tua `#b60205`) - Sistem crash, checkout macet total, no workaround.
-* `severity: major` (Oranye `#d93f0b`) - Fungsi utama gagal, kalkulasi total/diskon salah, ada workaround rumit.
-* `severity: minor` (Kuning `#fbca04`) - Fungsi sekunder bermasalah, layout geser, salah pesan validasi.
-* `severity: trivial` (Hijau Muda `#0e8a16`) - Typo, inkonsistensi estetika minor.
+* `severity:blocker` / `severity:critical` (Merah `#b60205`) - Sistem crash, checkout macet total tanpa workaround.
+* `severity:major` (Oranye `#d93f0b`) - Fungsi utama kalkulasi total harga/diskon salah, logika bisnis inti gagal.
+* `severity:moderate` (Salmon `#e99695`) - Fungsi sekunder terganggu tetapi ada workaround.
+* `severity:minor` (Kuning `#fbca04`) - Masalah fungsionalitas kecil, validasi pesan kurang tepat.
+* `severity:trivial` (Biru Muda `#c5def5`) - Cacat kosmetik, tata letak visual minor, atau typo teks.
 
 ### 2. Prioritas Perbaikan Bisnis (Priority)
-* `priority: P1` (Maroon `#7e0018`) - Urgent / Blocker (Wajib diselesaikan untuk Quality Gate).
-* `priority: P2` (Rose `#e11d48`) - High (Mempengaruhi pengalaman inti, wajib selesai sebelum rilis).
-* `priority: P3` (Amber `#f59e0b`) - Medium (Dapat dijadwalkan pada sprint pemeliharaan).
-* `priority: P4` (Abu-abu `#64748b`) - Low (Nice to have).
+* `priority:p1` (Maroon `#7e0018`) - Urgent / Blocker (Wajib PASS untuk memenuhi syarat Quality Gate Sprint 5).
+* `priority:p2` (Rose `#e11d48`) - High (Mempengaruhi pengalaman inti belanja, wajib selesai sebelum rilis).
+* `priority:p3` (Amber `#f59e0b`) - Medium (Dapat dijadwalkan pada sprint pemeliharaan).
+* `priority:p4` (Abu-abu `#64748b`) - Low (Perbaikan kosmetik / nice to have).
 
-### 3. Area Modul
-* `area: keranjang` - Terkait modul keranjang belanja.
-* `area: checkout` - Terkait alur checkout, pengiriman, dan pembayaran.
-* `area: login-auth` - Terkait alur autentikasi dan akun pengguna.
-* `area: beranda` - Terkait halaman utama.
-* `area: kompatibilitas` - Temuan cross-browser dan responsive (Tugas T6).
-* `area: aksesibilitas` - Temuan audit aksesibilitas (Tugas T7).
+### 3. Modul Aplikasi (CilacapTools Keranjang & Checkout)
+* `module:cart` - Fitur keranjang belanja (tambah, edit qty, hapus item, diskon).
+* `module:checkout-address` - Form checkout langkah 1 (informasi pembeli & alamat penagihan).
+* `module:checkout-payment` - Form checkout langkah 2 (metode pembayaran dummy).
+* `module:checkout-confirmation` - Form checkout langkah 3 (konfirmasi transaksi & faktur/invoice).
+* `module:login` - Alur wajib autentikasi pengguna.
+* `module:home` - Alur wajib halaman beranda.
+* `module:product-detail` - Halaman detail perkakas & tombol Add to Cart.
 
-### 4. Status Triage & Defect Lifecycle
-* `status: unconfirmed` - Bug baru, menunggu verifikasi mutu oleh R5.
-* `status: confirmed` - Bug valid dan berhasil direproduksi.
-* `status: under-triage` - Sedang dibahas dalam Triage Meeting.
-* `status: verified-in-kiwi` - Sudah ditautkan ke eksekusi FAIL di Kiwi TCMS.
-* `status: rejected-duplicate` - Ditolak karena duplikat.
-* `status: rejected-not-a-bug` - Ditolak karena perilaku identik dengan versi tanpa cacat.
+### 4. Teknik & Alat Pengujian
+* `technique:equivalence-partitioning`, `technique:bva`, `technique:error-guessing`, `technique:negative-testing`, `technique:edge-case`, `technique:exploratory-testing`, `technique:cross-browser`, `technique:mobile-responsive`, `technique:accessibility-audit`.
+* `tool:axe-devtools`, `tool:wave`, `tool:lighthouse`.
 
-### 5. Role Pelapor
+### 5. Aksesibilitas WCAG 2.2 (POUR & Level)
+* `wcag:perceivable`, `wcag:operable`, `wcag:understandable`, `wcag:robust`.
+* `wcag-level:a`, `wcag-level:aa`, `wcag-level:aaa`.
+
+### 6. Status Siklus Hidup Cacat & Triage
+* `status:new`, `status:triaged`, `status:verified-in-kiwi`, `status:resolved`, `status:verified`, `status:closed`, `status:reopened`, `status:blocked`, `status:duplicate`, `status:not-a-bug`, `status:cannot-reproduce`, `status:wontfix`.
+* `needs-triage`, `needs-refinement`, `ready-for-test`, `technical-debt`.
+
+### 7. Peran Pelapor
 * `role: R1-Lead`, `role: R2-Analyst`, `role: R3-Exploratory`, `role: R4-Compatibility`, `role: R5-DefectManager`.
+
+### 8. Label Standar yang Diperbarui
+* `documentation`, `enhancement`, `question`.
 
 ---
 

@@ -1,7 +1,7 @@
 name: "🐞 Bug Report (Laporan Cacat)"
 description: "Laporkan temuan bug pada aplikasi CilacapTools (with-bugs.practicesoftwaretesting.com)"
 title: "[BUG-XXX]: [English Title] / [Judul Bahasa Indonesia]"
-labels: ["status: unconfirmed", "needs-review"]
+labels: ["status:new", "needs-triage"]
 body:
   - type: markdown
     attributes:

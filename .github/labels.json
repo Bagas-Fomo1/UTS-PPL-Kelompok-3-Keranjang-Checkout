@@ -1,547 +1,412 @@
-﻿[
-    {
-        "color":  "f143ab",
-        "description":  "Barrier affecting people with disabilities",
-        "name":  "accessibility"
-    },
-    {
-        "color":  "f143ab",
-        "description":  "Temuan hasil audit aksesibilitas (axe, WAVE, Lighthouse)",
-        "name":  "accessibility-audit"
-    },
-    {
-        "color":  "b60205",
-        "description":  "Akun pengujian utama dengan simulasi error pada checkout/finish",
-        "name":  "account:error_user"
-    },
-    {
-        "color":  "000000",
-        "description":  "Akun simulasi terblokir pada otentikasi login",
-        "name":  "account:locked_out_user"
-    },
-    {
-        "color":  "ff8c00",
-        "description":  "Akun simulasi latensi dan penundaan respons jaringan",
-        "name":  "account:performance_glitch_user"
-    },
-    {
-        "color":  "d93f0b",
-        "description":  "Akun pengujian simulasi galeri gambar rusak dan tombol macet",
-        "name":  "account:problem_user"
-    },
-    {
-        "color":  "2cbe4e",
-        "description":  "Akun standar tanpa anomali (sebagai baseline pembanding)",
-        "name":  "account:standard_user"
-    },
-    {
-        "color":  "ededed",
-        "description":  "Item terdaftar dalam antrean pekerjaan belum dijadwalkan",
-        "name":  "backlog"
-    },
-    {
-        "color":  "d73a4a",
-        "description":  "Something isn\u0027t working",
-        "name":  "bug"
-    },
-    {
-        "color":  "1d76db",
-        "description":  "Charter Sesi 1: Keranjang Belanja \u0026 Perubahan Kuantitas",
-        "name":  "charter:chr-001"
-    },
-    {
-        "color":  "5319e7",
-        "description":  "Charter Sesi 2: Alur Checkout \u0026 Kalkulasi Pembayaran",
-        "name":  "charter:chr-002"
-    },
-    {
-        "color":  "0052cc",
-        "description":  "Anggota 3: Katalog Produk Inventory",
-        "name":  "charter:chr-003"
-    },
-    {
-        "color":  "8a2be2",
-        "description":  "Anggota 4: Checkout Overview Finansial \u0026 Finish",
-        "name":  "charter:chr-004"
-    },
-    {
-        "color":  "006b75",
-        "description":  "Anggota 5: Checkout Complete State",
-        "name":  "charter:chr-005"
-    },
-    {
-        "color":  "0075ca",
-        "description":  "Improvements or additions to documentation",
-        "name":  "documentation"
-    },
-    {
-        "color":  "cfd3d7",
-        "description":  "This issue or pull request already exists",
-        "name":  "duplicate"
-    },
-    {
-        "color":  "a2eeef",
-        "description":  "New feature or request",
-        "name":  "enhancement"
-    },
-    {
-        "color":  "3ddc84",
-        "description":  "Terjadi pada mesin Android emulator otentik (NoxPlayer)",
-        "name":  "env:android-emulator"
-    },
-    {
-        "color":  "4285f4",
-        "description":  "Terjadi pada browser Google Chrome Desktop",
-        "name":  "env:chrome"
-    },
-    {
-        "color":  "0078d7",
-        "description":  "Terjadi pada browser Microsoft Edge Desktop",
-        "name":  "env:edge"
-    },
-    {
-        "color":  "ff7139",
-        "description":  "Terjadi pada browser Mozilla Firefox Desktop",
-        "name":  "env:firefox"
-    },
-    {
-        "color":  "1f883d",
-        "description":  "Terjadi pada simulasi viewport gawai mobile (misal: iPhone SE)",
-        "name":  "env:mobile-viewport"
-    },
-    {
-        "color":  "0e8a16",
-        "description":  "Temuan hasil pengujian eksploratif berbasis SBTM",
-        "name":  "exploratory-testing"
-    },
-    {
-        "color":  "7057ff",
-        "description":  "Good for newcomers",
-        "name":  "good first issue"
-    },
-    {
-        "color":  "008672",
-        "description":  "Extra attention is needed",
-        "name":  "help wanted"
-    },
-    {
-        "color":  "fef2c0",
-        "description":  "Item sedang dalam proses verifikasi dan validasi oleh tim QA",
-        "name":  "in-qa"
-    },
-    {
-        "color":  "e4e669",
-        "description":  "This doesn\u0027t seem right",
-        "name":  "invalid"
-    },
-    {
-        "color":  "5319e7",
-        "description":  "Modul Keranjang Belanja (tambah, ubah kuantitas, hapus item, diskon)",
-        "name":  "module:cart"
-    },
-    {
-        "color":  "006b75",
-        "description":  "Modul Checkout Langkah 3 - Konfirmasi Transaksi Selesai \u0026 Invoice",
-        "name":  "module:checkout-complete"
-    },
-    {
-        "color":  "1d76db",
-        "description":  "Modul Checkout Langkah 1 - Form Informasi Pembeli \u0026 Alamat",
-        "name":  "module:checkout-step-one"
-    },
-    {
-        "color":  "8a2be2",
-        "description":  "Modul Checkout Langkah 2 - Opsi Pembayaran \u0026 Kalkulasi Total",
-        "name":  "module:checkout-step-two"
-    },
-    {
-        "color":  "0052cc",
-        "description":  "Modul Katalog Produk (inventory.html)",
-        "name":  "module:inventory"
-    },
-    {
-        "color":  "cfd3d7",
-        "description":  "Modul Autentikasi Halaman Login \u0026 Logout (Alur Wajib)",
-        "name":  "module:login"
-    },
-    {
-        "color":  "f9d0c4",
-        "description":  "Deskripsi tiket atau langkah reproduksi perlu dilengkapi",
-        "name":  "needs-refinement"
-    },
-    {
-        "color":  "ededed",
-        "description":  "Tiket baru membutuhkan peninjauan dan validasi triase oleh Test Lead",
-        "name":  "needs-triage"
-    },
-    {
-        "color":  "b60205",
-        "description":  "Prioritas tertinggi untuk investigasi dan perbaikan",
-        "name":  "priority:p1"
-    },
-    {
-        "color":  "fbca04",
-        "description":  "Prioritas menengah",
-        "name":  "priority:p2"
-    },
-    {
-        "color":  "0e8a16",
-        "description":  "Prioritas rendah",
-        "name":  "priority:p3"
-    },
-    {
-        "color":  "d4c5f9",
-        "description":  "Daftar kebutuhan/fitur/bug dalam Product Backlog",
-        "name":  "product-backlog"
-    },
-    {
-        "color":  "d876e3",
-        "description":  "Further information is requested",
-        "name":  "question"
-    },
-    {
-        "color":  "c2e0c6",
-        "description":  "Spesifikasi telah siap dan dapat mulai dikerjakan developer",
-        "name":  "ready-for-dev"
-    },
-    {
-        "color":  "a2eeef",
-        "description":  "Fitur/perbaikan telah dideploy dan siap diuji oleh QA tester",
-        "name":  "ready-for-test"
-    },
-    {
-        "color":  "d73a4a",
-        "description":  "Session-Based Test Management : Dokumen laporan kerusakan formal hasil debrief",
-        "name":  "sbtm:bug-report"
-    },
-    {
-        "color":  "0052cc",
-        "description":  "Artefak catatan riil eksekusi pengujian Session Notes",
-        "name":  "sbtm:session-notes"
-    },
-    {
-        "color":  "0e8a16",
-        "description":  "Artefak dokumen misi pengujian Test Charter",
-        "name":  "sbtm:test-charter"
-    },
-    {
-        "color":  "b60205",
-        "description":  "Cacat fatal sistem crash / memblokir pengujian total",
-        "name":  "severity:blocker"
-    },
-    {
-        "color":  "b60205",
-        "description":  "Cacat kritis yang memutus alur utama transaksi tanpa workaround",
-        "name":  "severity:critical"
-    },
-    {
-        "color":  "d93f0b",
-        "description":  "Cacat mayor yang merusak fungsi fungsional inti",
-        "name":  "severity:major"
-    },
-    {
-        "color":  "fbca04",
-        "description":  "Cacat minor fungsionalitas kecil tanpa memblokir alur kerja",
-        "name":  "severity:minor"
-    },
-    {
-        "color":  "e99695",
-        "description":  "Cacat sedang, fungsi sekunder terganggu tetapi ada workaround",
-        "name":  "severity:moderate"
-    },
-    {
-        "color":  "c5def5",
-        "description":  "Cacat kosmetik, tata letak visual minor, atau salah ketik/typo",
-        "name":  "severity:trivial"
-    },
-    {
-        "color":  "bfdadc",
-        "description":  "Item pekerjaan yang masuk dalam sprint/iterasi aktif",
-        "name":  "sprint-backlog"
-    },
-    {
-        "color":  "ededed",
-        "description":  "Status item berada dalam daftar antrean backlog",
-        "name":  "status:backlog"
-    },
-    {
-        "color":  "b60205",
-        "description":  "Pekerjaan terhambat kendala eksternal / dependensi lain",
-        "name":  "status:blocked"
-    },
-    {
-        "color":  "e4e669",
-        "description":  "Cacat tidak dapat direproduksi oleh tim pengembang",
-        "name":  "status:cannot-reproduce"
-    },
-    {
-        "color":  "5319e7",
-        "description":  "Siklus hidup cacat selesai dan ditutup permanen",
-        "name":  "status:closed"
-    },
-    {
-        "color":  "cfd3d7",
-        "description":  "Laporan cacat merupakan duplikasi dari issue terdahulu",
-        "name":  "status:duplicate"
-    },
-    {
-        "color":  "fef2c0",
-        "description":  "Cacat sedang dalam proses perbaikan oleh developer",
-        "name":  "status:in-progress"
-    },
-    {
-        "color":  "d4c5f9",
-        "description":  "Cacat baru dilaporkan oleh tester (menunggu triase)",
-        "name":  "status:new"
-    },
-    {
-        "color":  "cfd3d7",
-        "description":  "Perilaku sesuai spesifikasi desain sistem (bukan bug)",
-        "name":  "status:not-a-bug"
-    },
-    {
-        "color":  "e11d21",
-        "description":  "Cacat muncul kembali setelah perbaikan gagal diverifikasi",
-        "name":  "status:reopened"
-    },
-    {
-        "color":  "c2e0c6",
-        "description":  "Cacat telah diperbaiki oleh tim pengembang",
-        "name":  "status:resolved"
-    },
-    {
-        "color":  "bfdadc",
-        "description":  "Cacat telah ditinjau dan divalidasi oleh Test Lead",
-        "name":  "status:triaged"
-    },
-    {
-        "color":  "2cbe4e",
-        "description":  "Perbaikan cacat telah diverifikasi ulang oleh QA tester",
-        "name":  "status:verified"
-    },
-    {
-        "color":  "ffffff",
-        "description":  "Diputuskan tidak diperbaiki oleh tim produk/bisnis",
-        "name":  "status:wontfix"
-    },
-    {
-        "color":  "fbca04",
-        "description":  "Utang teknis yang perlu direfaktor atau diinvestigasi lebih lanjut",
-        "name":  "technical-debt"
-    },
-    {
-        "color":  "f143ab",
-        "description":  "Pengujian aksesibilitas kepatuhan standar WCAG 2.2",
-        "name":  "technique:accessibility-audit"
-    },
-    {
-        "color":  "1d76db",
-        "description":  "Teknik pengujian Boundary Value Analysis (Nilai Batas)",
-        "name":  "technique:bva"
-    },
-    {
-        "color":  "006b75",
-        "description":  "Pengujian kompatibilitas lintas browser (Chrome, Firefox, Edge)",
-        "name":  "technique:cross-browser"
-    },
-    {
-        "color":  "d93f0b",
-        "description":  "Pengujian kondisi batas ekstrem / skenario langka",
-        "name":  "technique:edge-case"
-    },
-    {
-        "color":  "0052cc",
-        "description":  "Teknik pengujian Equivalence Partitioning (Partisi Ekuivalensi)",
-        "name":  "technique:equivalence-partitioning"
-    },
-    {
-        "color":  "5319e7",
-        "description":  "Teknik pengujian Error Guessing berbasis intuisi tester",
-        "name":  "technique:error-guessing"
-    },
-    {
-        "color":  "0e8a16",
-        "description":  "Pengujian eksploratif terstruktur berbasis SBTM",
-        "name":  "technique:exploratory-testing"
-    },
-    {
-        "color":  "1f883d",
-        "description":  "Pengujian responsivitas antarmuka perangkat mobile",
-        "name":  "technique:mobile-responsive"
-    },
-    {
-        "color":  "e99695",
-        "description":  "Pengujian negatif menggunakan input tidak valid/di luar spek",
-        "name":  "technique:negative-testing"
-    },
-    {
-        "color":  "006699",
-        "description":  "Audit terdeteksi oleh rule engine axe DevTools",
-        "name":  "tool:axe-devtools"
-    },
-    {
-        "color":  "0cce6b",
-        "description":  "Audit terdeteksi oleh Google Lighthouse Accessibility Audit",
-        "name":  "tool:lighthouse"
-    },
-    {
-        "color":  "2b2b2b",
-        "description":  "Audit terdeteksi oleh visual icon WAVE Evaluation Tool",
-        "name":  "tool:wave"
-    },
-    {
-        "color":  "e599f7",
-        "description":  "Hambatan akses bagi pengguna disabilitas / alat bantu",
-        "name":  "type:accessibility-barrier"
-    },
-    {
-        "color":  "0075ca",
-        "description":  "Perbedaan perilaku dan rendering lintas browser",
-        "name":  "type:compatibility"
-    },
-    {
-        "color":  "800000",
-        "description":  "Runtime unhandled exception / freeze / page crash",
-        "name":  "type:crash-exception"
-    },
-    {
-        "color":  "d4c5f9",
-        "description":  "Kesalahan validasi form, format data, atau karakter",
-        "name":  "type:data-validation"
-    },
-    {
-        "color":  "5319e7",
-        "description":  "Inisiatif besar yang memayungi beberapa user story / charter",
-        "name":  "type:epic"
-    },
-    {
-        "color":  "ff8c00",
-        "description":  "Kesalahan perhitungan matematika subtotal, pajak, atau total",
-        "name":  "type:financial-calculation"
-    },
-    {
-        "color":  "d73a4a",
-        "description":  "Kegagalan fungsionalitas logika bisnis sistem",
-        "name":  "type:functional-bug"
-    },
-    {
-        "color":  "b60205",
-        "description":  "Perbaikan darurat kritis untuk lingkungan produksi",
-        "name":  "type:hotfix"
-    },
-    {
-        "color":  "d93f0b",
-        "description":  "Cacat regresi pada fungsi yang sebelumnya sudah berjalan normal",
-        "name":  "type:regression"
-    },
-    {
-        "color":  "a2eeef",
-        "description":  "Inkonsistensi status sesi, local storage, atau keranjang",
-        "name":  "type:state-management"
-    },
-    {
-        "color":  "cfd3d7",
-        "description":  "Unit pekerjaan pecahan terkecil dari task atau bug",
-        "name":  "type:subtask"
-    },
-    {
-        "color":  "0e8a16",
-        "description":  "Tugas teknis implementasi atau konfigurasi pengujian",
-        "name":  "type:task"
-    },
-    {
-        "color":  "e99695",
-        "description":  "Cakupan pengujian yang tertinggal dan perlu dibuatkan tes otomatis",
-        "name":  "type:test-debt"
-    },
-    {
-        "color":  "bfdadc",
-        "description":  "Cacat antarmuka pengguna, tata letak, CSS, atau estetika",
-        "name":  "type:ui-ux-defect"
-    },
-    {
-        "color":  "0052cc",
-        "description":  "Kebutuhan fungsional dari sudut pandang pengguna akhir",
-        "name":  "type:user-story"
-    },
-    {
-        "color":  "b60205",
-        "description":  "Tingkat kepatuhan WCAG Level A (Fondasi Aksesibilitas Minimum)",
-        "name":  "wcag-level:a"
-    },
-    {
-        "color":  "fbca04",
-        "description":  "Tingkat kepatuhan WCAG Level AA (Standar Acuan Global Industri)",
-        "name":  "wcag-level:aa"
-    },
-    {
-        "color":  "0e8a16",
-        "description":  "Tingkat kepatuhan WCAG Level AAA (Tingkat Kepatuhan Tertinggi)",
-        "name":  "wcag-level:aaa"
-    },
-    {
-        "color":  "1d76db",
-        "description":  "Prinsip WCAG: Komponen antarmuka dapat dioperasikan (keyboard dll)",
-        "name":  "wcag:operable"
-    },
-    {
-        "color":  "f143ab",
-        "description":  "Prinsip WCAG: Konten dapat dipersepsikan oleh indra pengguna",
-        "name":  "wcag:perceivable"
-    },
-    {
-        "color":  "0e8a16",
-        "description":  "Prinsip WCAG: Kompatibel dengan berbagai user agent \u0026 screen reader",
-        "name":  "wcag:robust"
-    },
-    {
-        "color":  "5319e7",
-        "description":  "Prinsip WCAG: Informasi dan pengoperasian mudah dipahami",
-        "name":  "wcag:understandable"
-    },
-    {
-        "color":  "ffffff",
-        "description":  "This will not be worked on",
-        "name":  "wontfix"
-    },
-    {
-        "color":  "0366d6",
-        "description":  "Dilaporkan oleh R1 (QA Lead \u0026 Test Manager)",
-        "name":  "role: R1-Lead"
-    },
-    {
-        "color":  "0366d6",
-        "description":  "Dilaporkan oleh R2 (Test Analyst)",
-        "name":  "role: R2-Analyst"
-    },
-    {
-        "color":  "0366d6",
-        "description":  "Dilaporkan oleh R3 (Exploratory Tester)",
-        "name":  "role: R3-Exploratory"
-    },
-    {
-        "color":  "0366d6",
-        "description":  "Dilaporkan oleh R4 (Compatibility \u0026 Accessibility Tester)",
-        "name":  "role: R4-Compatibility"
-    },
-    {
-        "color":  "0366d6",
-        "description":  "Dilaporkan oleh R5 (Defect Management Engineer)",
-        "name":  "role: R5-DefectManager"
-    },
-    {
-        "color":  "64748b",
-        "description":  "Prioritas terendah / perbaikan kosmetik / nice to have",
-        "name":  "priority:p4"
-    },
-    {
-        "color":  "2ea44f",
-        "description":  "Telah ditautkan ke eksekusi FAIL di Kiwi TCMS",
-        "name":  "status:verified-in-kiwi"
-    },
-    {
-        "color":  "006b75",
-        "description":  "Modul Halaman Beranda / Home (Alur Wajib)",
-        "name":  "module:home"
-    }
+[
+  {
+    "name": "severity:blocker",
+    "color": "b60205",
+    "description": "Cacat fatal sistem crash / memblokir pengujian total tanpa workaround"
+  },
+  {
+    "name": "severity:critical",
+    "color": "b60205",
+    "description": "Cacat kritis yang memutus alur utama transaksi checkout tanpa workaround"
+  },
+  {
+    "name": "severity:major",
+    "color": "d93f0b",
+    "description": "Cacat mayor yang merusak kalkulasi total harga/diskon atau logika bisnis inti"
+  },
+  {
+    "name": "severity:moderate",
+    "color": "e99695",
+    "description": "Cacat sedang, fungsi sekunder terganggu tetapi ada workaround"
+  },
+  {
+    "name": "severity:minor",
+    "color": "fbca04",
+    "description": "Cacat minor fungsionalitas kecil tanpa memblokir alur kerja checkout"
+  },
+  {
+    "name": "severity:trivial",
+    "color": "c5def5",
+    "description": "Cacat kosmetik, tata letak visual minor, atau salah ketik/typo"
+  },
+  {
+    "name": "priority:p1",
+    "color": "7e0018",
+    "description": "Prioritas tertinggi (Urgent / Blocker rilis Quality Gate Sprint 5)"
+  },
+  {
+    "name": "priority:p2",
+    "color": "e11d48",
+    "description": "Prioritas tinggi (High - Wajib diselesaikan sebelum rilis)"
+  },
+  {
+    "name": "priority:p3",
+    "color": "f59e0b",
+    "description": "Prioritas menengah (Medium - Dapat ditunda ke sprint berikutnya)"
+  },
+  {
+    "name": "priority:p4",
+    "color": "64748b",
+    "description": "Prioritas rendah (Low - Perbaikan kosmetik / nice to have)"
+  },
+  {
+    "name": "module:cart",
+    "color": "5319e7",
+    "description": "Modul Keranjang Belanja (tambah item, ubah qty, hapus, kalkulasi total)"
+  },
+  {
+    "name": "module:checkout-address",
+    "color": "1d76db",
+    "description": "Modul Checkout Langkah 1 - Form Informasi Pembeli & Alamat Penagihan"
+  },
+  {
+    "name": "module:checkout-payment",
+    "color": "8a2be2",
+    "description": "Modul Checkout Langkah 2 - Opsi Metode Pembayaran & Data Dummy"
+  },
+  {
+    "name": "module:checkout-confirmation",
+    "color": "006b75",
+    "description": "Modul Checkout Langkah 3 - Konfirmasi Transaksi Selesai & Faktur/Invoice"
+  },
+  {
+    "name": "module:login",
+    "color": "0052cc",
+    "description": "Modul Autentikasi Halaman Login & Logout (Alur Wajib)"
+  },
+  {
+    "name": "module:home",
+    "color": "20b2aa",
+    "description": "Modul Halaman Beranda / Home (Alur Wajib)"
+  },
+  {
+    "name": "module:product-detail",
+    "color": "4682b4",
+    "description": "Modul Halaman Detail Produk & Tombol Tambah ke Keranjang"
+  },
+  {
+    "name": "technique:equivalence-partitioning",
+    "color": "0052cc",
+    "description": "Teknik pengujian Equivalence Partitioning (Partisi Ekuivalensi - T2)"
+  },
+  {
+    "name": "technique:bva",
+    "color": "1d76db",
+    "description": "Teknik pengujian Boundary Value Analysis (Nilai Batas - T2)"
+  },
+  {
+    "name": "technique:error-guessing",
+    "color": "5319e7",
+    "description": "Teknik pengujian Error Guessing berbasis intuisi tester (T3)"
+  },
+  {
+    "name": "technique:negative-testing",
+    "color": "e99695",
+    "description": "Pengujian negatif menggunakan input tidak valid/di luar spek (T3)"
+  },
+  {
+    "name": "technique:edge-case",
+    "color": "d93f0b",
+    "description": "Pengujian kondisi batas ekstrem / skenario langka (T3)"
+  },
+  {
+    "name": "technique:exploratory-testing",
+    "color": "0e8a16",
+    "description": "Pengujian eksploratif terstruktur berbasis SBTM (T5)"
+  },
+  {
+    "name": "technique:cross-browser",
+    "color": "006b75",
+    "description": "Pengujian kompatibilitas lintas browser Chrome, Firefox, Edge (T6)"
+  },
+  {
+    "name": "technique:mobile-responsive",
+    "color": "1f883d",
+    "description": "Pengujian responsivitas antarmuka perangkat mobile & viewport (T6)"
+  },
+  {
+    "name": "technique:accessibility-audit",
+    "color": "f143ab",
+    "description": "Pengujian aksesibilitas kepatuhan standar WCAG 2.2 (T7)"
+  },
+  {
+    "name": "tool:axe-devtools",
+    "color": "006699",
+    "description": "Audit terdeteksi oleh rule engine axe DevTools (T7)"
+  },
+  {
+    "name": "tool:wave",
+    "color": "2b2b2b",
+    "description": "Audit terdeteksi oleh visual icon WAVE Evaluation Tool (T7)"
+  },
+  {
+    "name": "tool:lighthouse",
+    "color": "0cce6b",
+    "description": "Audit terdeteksi oleh Google Lighthouse Accessibility Audit (T7)"
+  },
+  {
+    "name": "wcag:perceivable",
+    "color": "f143ab",
+    "description": "Prinsip WCAG: Konten dapat dipersepsikan oleh indra pengguna (POUR)"
+  },
+  {
+    "name": "wcag:operable",
+    "color": "1d76db",
+    "description": "Prinsip WCAG: Komponen antarmuka dapat dioperasikan keyboard dll (POUR)"
+  },
+  {
+    "name": "wcag:understandable",
+    "color": "5319e7",
+    "description": "Prinsip WCAG: Informasi dan pengoperasian mudah dipahami (POUR)"
+  },
+  {
+    "name": "wcag:robust",
+    "color": "0e8a16",
+    "description": "Prinsip WCAG: Kompatibel dengan berbagai user agent & screen reader (POUR)"
+  },
+  {
+    "name": "wcag-level:a",
+    "color": "b60205",
+    "description": "Tingkat kepatuhan WCAG Level A (Fondasi Aksesibilitas Minimum)"
+  },
+  {
+    "name": "wcag-level:aa",
+    "color": "fbca04",
+    "description": "Tingkat kepatuhan WCAG Level AA (Standar Acuan Global Industri)"
+  },
+  {
+    "name": "wcag-level:aaa",
+    "color": "0e8a16",
+    "description": "Tingkat kepatuhan WCAG Level AAA (Tingkat Kepatuhan Tertinggi)"
+  },
+  {
+    "name": "env:chrome",
+    "color": "4285f4",
+    "description": "Terjadi pada browser Google Chrome Desktop"
+  },
+  {
+    "name": "env:firefox",
+    "color": "ff7139",
+    "description": "Terjadi pada browser Mozilla Firefox Desktop"
+  },
+  {
+    "name": "env:edge",
+    "color": "0078d7",
+    "description": "Terjadi pada browser Microsoft Edge Desktop"
+  },
+  {
+    "name": "env:mobile-viewport",
+    "color": "1f883d",
+    "description": "Terjadi pada simulasi viewport gawai mobile (375x667, 390x844, 412x915)"
+  },
+  {
+    "name": "env:android-device",
+    "color": "3ddc84",
+    "description": "Terjadi pada perangkat Android fisik atau emulator otentik"
+  },
+  {
+    "name": "type:financial-calculation",
+    "color": "ff8c00",
+    "description": "Kesalahan perhitungan matematika subtotal, diskon, atau total belanja"
+  },
+  {
+    "name": "type:state-management",
+    "color": "a2eeef",
+    "description": "Inkonsistensi status sesi, local storage, atau kuantitas keranjang"
+  },
+  {
+    "name": "type:data-validation",
+    "color": "d4c5f9",
+    "description": "Kesalahan validasi form checkout, format data, atau karakter batas"
+  },
+  {
+    "name": "type:functional-bug",
+    "color": "d73a4a",
+    "description": "Kegagalan fungsionalitas logika bisnis alur belanja dan checkout"
+  },
+  {
+    "name": "type:crash-exception",
+    "color": "800000",
+    "description": "Runtime unhandled exception / freeze / page blank / console error JS"
+  },
+  {
+    "name": "type:ui-ux-defect",
+    "color": "bfdadc",
+    "description": "Cacat antarmuka pengguna, tata letak berantakan, CSS, atau estetika"
+  },
+  {
+    "name": "type:accessibility-barrier",
+    "color": "e599f7",
+    "description": "Hambatan akses bagi pengguna disabilitas / navigasi keyboard"
+  },
+  {
+    "name": "type:compatibility",
+    "color": "0075ca",
+    "description": "Perbedaan perilaku dan rendering lintas browser atau resolusi layar"
+  },
+  {
+    "name": "type:regression",
+    "color": "d93f0b",
+    "description": "Cacat regresi pada fungsi yang sebelumnya sudah berjalan normal"
+  },
+  {
+    "name": "sbtm:test-charter",
+    "color": "0e8a16",
+    "description": "Artefak dokumen misi pengujian Test Charter (Tugas T5)"
+  },
+  {
+    "name": "sbtm:session-notes",
+    "color": "0052cc",
+    "description": "Artefak catatan riil eksekusi pengujian Session Notes (Tugas T5)"
+  },
+  {
+    "name": "sbtm:bug-report",
+    "color": "d73a4a",
+    "description": "Laporan cacat formal hasil investigasi sesi SBTM (Tugas T5)"
+  },
+  {
+    "name": "charter:chr-001",
+    "color": "1d76db",
+    "description": "Charter Sesi 1: Eksplorasi Keranjang Belanja & Perubahan Kuantitas Item"
+  },
+  {
+    "name": "charter:chr-002",
+    "color": "5319e7",
+    "description": "Charter Sesi 2: Eksplorasi Alur Checkout & Kalkulasi Pembayaran"
+  },
+  {
+    "name": "charter:chr-003",
+    "color": "0052cc",
+    "description": "Charter Sesi 3: Eksplorasi Autentikasi Login & Persistensi Sesi Keranjang"
+  },
+  {
+    "name": "charter:chr-004",
+    "color": "8a2be2",
+    "description": "Charter Sesi 4: Eksplorasi Form Validasi Alamat Penagihan & Pengiriman"
+  },
+  {
+    "name": "charter:chr-005",
+    "color": "006b75",
+    "description": "Charter Sesi 5: Eksplorasi Responsivitas Alur Checkout pada Layar Tersempit"
+  },
+  {
+    "name": "status:new",
+    "color": "d4c5f9",
+    "description": "Cacat baru dilaporkan oleh tester (menunggu triase R5)"
+  },
+  {
+    "name": "status:triaged",
+    "color": "bfdadc",
+    "description": "Cacat telah ditinjau dan divalidasi oleh Test Lead & Triage Meeting"
+  },
+  {
+    "name": "status:verified-in-kiwi",
+    "color": "2ea44f",
+    "description": "Telah diverifikasi dan ditautkan ke eksekusi FAIL di Kiwi TCMS"
+  },
+  {
+    "name": "status:resolved",
+    "color": "c2e0c6",
+    "description": "Cacat telah diperbaiki oleh tim pengembang"
+  },
+  {
+    "name": "status:verified",
+    "color": "2cbe4e",
+    "description": "Perbaikan cacat telah diverifikasi ulang oleh QA tester"
+  },
+  {
+    "name": "status:closed",
+    "color": "5319e7",
+    "description": "Siklus hidup cacat selesai dan ditutup permanen"
+  },
+  {
+    "name": "status:reopened",
+    "color": "e11d21",
+    "description": "Cacat muncul kembali setelah perbaikan gagal diverifikasi"
+  },
+  {
+    "name": "status:blocked",
+    "color": "b60205",
+    "description": "Pekerjaan terhambat kendala eksternal / dependensi lain"
+  },
+  {
+    "name": "status:duplicate",
+    "color": "cfd3d7",
+    "description": "Ditolak karena duplikasi dari issue yang sudah dilaporkan"
+  },
+  {
+    "name": "status:not-a-bug",
+    "color": "cfd3d7",
+    "description": "Ditolak karena perilaku sama persis dengan versi tanpa cacat (oracle)"
+  },
+  {
+    "name": "status:cannot-reproduce",
+    "color": "e4e669",
+    "description": "Cacat tidak dapat direproduksi oleh tim pengembang/tester lain"
+  },
+  {
+    "name": "status:wontfix",
+    "color": "ffffff",
+    "description": "Diputuskan tidak diperbaiki oleh tim produk/bisnis"
+  },
+  {
+    "name": "needs-triage",
+    "color": "ededed",
+    "description": "Tiket baru membutuhkan peninjauan dan validasi triase oleh Test Lead"
+  },
+  {
+    "name": "needs-refinement",
+    "color": "f9d0c4",
+    "description": "Deskripsi tiket atau langkah reproduksi perlu dilengkapi"
+  },
+  {
+    "name": "ready-for-test",
+    "color": "a2eeef",
+    "description": "Fitur/perbaikan telah dideploy dan siap diuji oleh QA tester"
+  },
+  {
+    "name": "technical-debt",
+    "color": "fbca04",
+    "description": "Utang teknis yang perlu direfaktor atau diinvestigasi lebih lanjut"
+  },
+  {
+    "name": "role: R1-Lead",
+    "color": "0366d6",
+    "description": "Dilaporkan oleh R1 (QA Lead & Test Manager)"
+  },
+  {
+    "name": "role: R2-Analyst",
+    "color": "0366d6",
+    "description": "Dilaporkan oleh R2 (Test Analyst)"
+  },
+  {
+    "name": "role: R3-Exploratory",
+    "color": "0366d6",
+    "description": "Dilaporkan oleh R3 (Exploratory Tester)"
+  },
+  {
+    "name": "role: R4-Compatibility",
+    "color": "0366d6",
+    "description": "Dilaporkan oleh R4 (Compatibility & Accessibility Tester)"
+  },
+  {
+    "name": "role: R5-DefectManager",
+    "color": "0366d6",
+    "description": "Dilaporkan oleh R5 (Defect Management Engineer)"
+  },
+  {
+    "name": "documentation",
+    "color": "0075ca",
+    "description": "Penyempurnaan atau penambahan dokumentasi dan laporan pengujian"
+  },
+  {
+    "name": "enhancement",
+    "color": "a2eeef",
+    "description": "Saran penyempurnaan antarmuka atau usulan fitur baru"
+  },
+  {
+    "name": "question",
+    "color": "d876e3",
+    "description": "Permintaan informasi tambahan atau klarifikasi seputar pengujian"
+  }
 ]
