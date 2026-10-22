@@ -72,6 +72,7 @@ body:
         - "Error Guessing (T3)"
         - "Negative Testing (T3)"
         - "Edge Case Testing (T3)"
+        - "Main Flow Execution - Alur Utama & Result Tracking (T4)"
         - "Exploratory Testing / SBTM (T5)"
         - "Cross-Browser Testing (T6)"
         - "Mobile Responsive Testing (T6)"
