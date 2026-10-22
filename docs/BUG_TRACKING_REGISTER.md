@@ -14,9 +14,9 @@
 | Total eksekusi Test Run 15 | 32 | Kiwi TCMS TR-15 |
 | Eksekusi PASSED | 18 | Kiwi TCMS TR-15 |
 | Eksekusi FAILED | 14 | Kiwi TCMS TR-15 |
-| Issue GitHub terdaftar | 3 | BUG-001 s/d BUG-003 |
-| Eksekusi FAILED yang belum ber-issue | 8 | Lihat Tabel 2 |
-| Defect density (issue terdaftar / total test case) | 9,4% | 3 / 32 x 100% |
+| Issue GitHub terdaftar | 5 | BUG-001 s/d BUG-005 |
+| Eksekusi FAILED yang belum ber-issue | 6 | Lihat Tabel 2 |
+| Defect density (issue terdaftar / total test case) | 15,6% | 5 / 32 x 100% |
 
 > Register ini hanya memuat temuan yang benar-benar memiliki issue GitHub dan tertaut ke eksekusi FAIL di Kiwi TCMS. Entri lama pada register sebelumnya tidak dipertahankan karena tidak memiliki issue maupun eksekusi pendukung.
 
@@ -29,6 +29,8 @@
 | **BUG-001** | Cart line total shows $00.00 for every quantity while grand total is correct / Total baris keranjang selalu $00.00 padahal Grand Total benar | Keranjang | Major | P2 | `needs-triage` | [Issue #8](https://github.com/Bagas-Fomo1/UTS-PPL-Kelompok-3-Keranjang-Checkout/issues/8) | TC-80 (TE-87), TC-82 (TE-89), TC-83 (TE-90), TC-84 (TE-91) | R2 - Aditya Agung Triwibowo |
 | **BUG-002** | Cart quantity is capped at 10 units while the reference build allows 99 / Kuantitas keranjang dibatasi 10 padahal acuan oracle mengizinkan 99 | Keranjang | Major | P2 | `needs-triage` | [Issue #9](https://github.com/Bagas-Fomo1/UTS-PPL-Kelompok-3-Keranjang-Checkout/issues/9) | TC-81 (TE-88) | R2 - Aditya Agung Triwibowo |
 | **BUG-003** | Cart accepts quantity 0 and keeps a $0.00 order line without any validation / Keranjang menerima kuantitas 0 dan menyisakan baris pesanan $00.00 tanpa validasi | Keranjang | Major | P2 | `needs-triage` | [Issue #10](https://github.com/Bagas-Fomo1/UTS-PPL-Kelompok-3-Keranjang-Checkout/issues/10) | TC-79 (TE-86) | R2 - Aditya Agung Triwibowo |
+| **BUG-004** | Missing accessible form labels on shipping address fields and disabled focus outline indicator on checkout form / Ketiadaan label formulir aksesibel pada isian alamat pengiriman dan indikator cincin fokus dinonaktifkan pada checkout | Checkout - Alur Pengiriman & Alamat | Critical | P1 | `needs-triage` | [Issue #11](https://github.com/Bagas-Fomo1/UTS-PPL-Kelompok-3-Keranjang-Checkout/issues/11) | TC-107 (TE-114) | R4 - Annisa Fitria Utami |
+| **BUG-005** | Low color contrast ratio on product description text and missing alternative text on main product image / Rasio kontras warna rendah pada teks deskripsi produk dan ketiadaan teks alternatif pada gambar utama produk | Detail Produk | Major | P2 | `needs-triage` | [Issue #12](https://github.com/Bagas-Fomo1/UTS-PPL-Kelompok-3-Keranjang-Checkout/issues/12) | TC-106 (TE-113) | R4 - Annisa Fitria Utami |
 
 Catatan: ketiga issue masih berstatus `needs-triage` sehingga severity dan priority di atas adalah usulan pelapor dan belum dikunci oleh R5/R1.
 
@@ -46,8 +48,6 @@ Eksekusi berikut sudah berstatus FAILED di TR-15 tetapi belum dilaporkan sebagai
 | TE-103 | TC-96 | [T3-NEG-08] Nilai negatif pada field quantity | bagas | FAILED | Lapor oleh R5 (akar masalah sama dengan BUG-003, pertimbangkan penggabungan) |
 | TE-107 | TC-100 | [T4-FLOW-04] Ubah kuantitas keranjang dan kalkulasi total | christian | FAILED | Lapor oleh R1, cek irisan dengan BUG-001 |
 | TE-108 | TC-101 | [T4-FLOW-05] Hapus item dari keranjang | christian | FAILED | Lapor oleh R1 |
-| TE-113 | TC-106 | [T7-A11Y-01] Audit Aksesibilitas Otomatis Halaman Detail Produk | annisa | FAILED | Lapor oleh R4 |
-| TE-114 | TC-107 | [T7-A11Y-02] Audit Aksesibilitas Otomatis Halaman Formulir | annisa | FAILED | Lapor oleh R4 |
 
 ---
 
