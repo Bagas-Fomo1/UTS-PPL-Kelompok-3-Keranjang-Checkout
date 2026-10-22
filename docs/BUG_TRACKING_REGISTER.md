@@ -14,9 +14,9 @@
 | Total eksekusi Test Run 15 | 32 | Kiwi TCMS TR-15 |
 | Eksekusi PASSED | 18 | Kiwi TCMS TR-15 |
 | Eksekusi FAILED | 14 | Kiwi TCMS TR-15 |
-| Issue GitHub terdaftar | 5 | BUG-001 s/d BUG-005 |
-| Eksekusi FAILED yang belum ber-issue | 6 | Lihat Tabel 2 |
-| Defect density (issue terdaftar / total test case) | 15,6% | 5 / 32 x 100% |
+| Issue GitHub terdaftar | 8 | BUG-001 s/d BUG-009 (BUG-007 tidak terpakai) |
+| Eksekusi FAILED yang belum ber-issue | 2 | Lihat Tabel 2 |
+| Defect density (issue terdaftar / total test case) | 25,0% | 8 / 32 x 100% |
 
 > Register ini hanya memuat temuan yang benar-benar memiliki issue GitHub dan tertaut ke eksekusi FAIL di Kiwi TCMS. Entri lama pada register sebelumnya tidak dipertahankan karena tidak memiliki issue maupun eksekusi pendukung.
 
@@ -31,6 +31,9 @@
 | **BUG-003** | Cart accepts quantity 0 and keeps a $0.00 order line without any validation / Keranjang menerima kuantitas 0 dan menyisakan baris pesanan $00.00 tanpa validasi | Keranjang | Major | P2 | `needs-triage` | [Issue #10](https://github.com/Bagas-Fomo1/UTS-PPL-Kelompok-3-Keranjang-Checkout/issues/10) | TC-79 (TE-86) | R2 - Aditya Agung Triwibowo |
 | **BUG-004** | Missing accessible form labels on shipping address fields and disabled focus outline indicator on checkout form / Ketiadaan label formulir aksesibel pada isian alamat pengiriman dan indikator cincin fokus dinonaktifkan pada checkout | Checkout - Alur Pengiriman & Alamat | Critical | P1 | `needs-triage` | [Issue #11](https://github.com/Bagas-Fomo1/UTS-PPL-Kelompok-3-Keranjang-Checkout/issues/11) | TC-107 (TE-114) | R4 - Annisa Fitria Utami |
 | **BUG-005** | Low color contrast ratio on product description text and missing alternative text on main product image / Rasio kontras warna rendah pada teks deskripsi produk dan ketiadaan teks alternatif pada gambar utama produk | Detail Produk | Major | P2 | `needs-triage` | [Issue #12](https://github.com/Bagas-Fomo1/UTS-PPL-Kelompok-3-Keranjang-Checkout/issues/12) | TC-106 (TE-113) | R4 - Annisa Fitria Utami |
+| **BUG-006** | Cart item delete button is unclickable (dead click) preventing item removal / Tombol hapus item keranjang tidak dapat diklik sehingga item tidak dapat dihapus | Keranjang | Critical | P1 | `needs-triage` | [Issue #17](https://github.com/Bagas-Fomo1/UTS-PPL-Kelompok-3-Keranjang-Checkout/issues/17) | TC-101 (TE-108) | R1 - Christian Luis Paskalis Ginting |
+| **BUG-008** | Checkout postcode field accepts 300 characters without length restriction / Field kode pos menerima 300 karakter tanpa batas panjang atau pesan validasi | Checkout - Alur Pengiriman & Alamat | Minor | P3 | `needs-triage` | [Issue #15](https://github.com/Bagas-Fomo1/UTS-PPL-Kelompok-3-Keranjang-Checkout/issues/15) | TC-92 (TE-99) | R5 - Bagas Agung Krisnawan |
+| **BUG-009** | Cart allows negative quantity (-1) input without client-side prevention / Kuantitas negatif (-1) diterima pada keranjang tanpa pencegahan di sisi klien | Keranjang | Major | P2 | `needs-triage` | [Issue #16](https://github.com/Bagas-Fomo1/UTS-PPL-Kelompok-3-Keranjang-Checkout/issues/16) | TC-96 (TE-103) | R5 - Bagas Agung Krisnawan |
 
 Catatan: ketiga issue masih berstatus `needs-triage` sehingga severity dan priority di atas adalah usulan pelapor dan belum dikunci oleh R5/R1.
 
@@ -38,16 +41,12 @@ Catatan: ketiga issue masih berstatus `needs-triage` sehingga severity dan prior
 
 ## Tabel 2. Eksekusi FAILED yang Belum memiliki Issue
 
-Eksekusi berikut sudah berstatus FAILED di TR-15 tetapi belum dilaporkan sebagai issue GitHub. Pemilik eksekusi perlu membuat laporan agar rasio 14 FAILED terhadap issue yang ada tidak menimbulkan pertanyaan saat responsi.
+Eksekusi berikut sudah berstatus FAILED di TR-15 tetapi belum menghasilkan laporan cacat tersendiri. Keduanya berasal dari sesi exploratory yang charter-nya memang sudah didaftarkan sebagai test case, sehingga keputusannya bergantung pada triase.
 
 | Test Execution | Test Case | Judul Test Case | Penguji | Status | Tindak Lanjut |
 | :---: | :---: | :--- | :---: | :---: | :--- |
-| TE-84 | TC-77 | [R3-CH-01] Exploratory Testing - Add to Cart dan Pengelolaan Keranjang | nuzul | FAILED | Lapor oleh R3, verifikasi R5 |
-| TE-85 | TC-78 | [R3-CH-02] Exploratory Testing - Checkout dan Validasi Pesanan | nuzul | FAILED | Lapor oleh R3, verifikasi R5 |
-| TE-99 | TC-92 | [T3-NEG-04] Postcode 300 karakter (batas panjang tidak dibatasi) | bagas | FAILED | Lapor oleh R5 |
-| TE-103 | TC-96 | [T3-NEG-08] Nilai negatif pada field quantity | bagas | FAILED | Lapor oleh R5 (akar masalah sama dengan BUG-003, pertimbangkan penggabungan) |
-| TE-107 | TC-100 | [T4-FLOW-04] Ubah kuantitas keranjang dan kalkulasi total | christian | FAILED | Lapor oleh R1, cek irisan dengan BUG-001 |
-| TE-108 | TC-101 | [T4-FLOW-05] Hapus item dari keranjang | christian | FAILED | Lapor oleh R1 |
+| TE-84 | TC-77 | [R3-CH-01] Exploratory Testing - Add to Cart dan Pengelolaan Keranjang | nuzul | FAILED | Charter sudah didaftarkan (issue #13); perlu keputusan triase apakah temuan sesi menjadi cacat tersendiri |
+| TE-85 | TC-78 | [R3-CH-02] Exploratory Testing - Checkout dan Validasi Pesanan | nuzul | FAILED | Charter sudah didaftarkan (issue #14); perlu keputusan triase apakah temuan sesi menjadi cacat tersendiri |
 
 ---
 
@@ -74,13 +73,13 @@ Eksekusi berikut sudah berstatus FAILED di TR-15 tetapi belum dilaporkan sebagai
 
 | Dimensi | Distribusi |
 | :--- | :--- |
-| Severity | Major: 3 |
-| Priority | P2: 3 |
-| Area | Keranjang: 3 |
-| Teknik pengujian | Boundary Value Analysis (T2): 3 |
-| Status alur | `needs-triage`: 3 |
+| Severity | Critical: 2 · Major: 5 · Minor: 1 |
+| Priority | P1: 2 · P2: 5 · P3: 1 |
+| Area | Keranjang: 5 · Checkout Address: 2 · Detail Produk: 1 |
+| Teknik pengujian | BVA (T2): 6 · Error Guessing (T3): 1 · T4: 1 |
+| Status alur | `needs-triage`: 8 |
 
-Kesimpulan sementara: seluruh cacat terdaftar terkonsentrasi pada satu komponen, yaitu kontrol kuantitas keranjang (`[data-test=product-quantity]`) dan kolom Total baris. Ini menunjukkan area keranjang sebagai titik paling rawan pada build Sprint 5 dan layak menjadi prioritas perbaikan sebelum rilis.
+Kesimpulan sementara: lima dari delapan cacat berada pada area keranjang, dengan konsentrasi pada kontrol kuantitas (`[data-test=product-quantity]`), kolom Total baris, dan tombol hapus item. Area keranjang menjadi titik paling rawan pada build Sprint 5, diikuti formulir alamat yang menyumbang dua cacat aksesibilitas dan validasi panjang.
 
 ---
 
@@ -89,3 +88,5 @@ Kesimpulan sementara: seluruh cacat terdaftar terkonsentrasi pada satu komponen,
 | Tanggal | Perubahan |
 | :--- | :--- |
 | 22 Oktober 2026 | Register disusun ulang mengikuti issue nyata di repositori: BUG-001 s/d BUG-003. Entri lama BUG-001 s/d BUG-010 dihapus karena tidak memiliki issue maupun eksekusi pendukung. Ditambahkan Tabel 2 berisi eksekusi FAILED yang belum dilaporkan. |
+| 22 Oktober 2026 | Ditambahkan BUG-004 dan BUG-005 dari R4 (aksesibilitas). |
+| 22 Oktober 2026 | Ditambahkan BUG-006 (R1), BUG-008 dan BUG-009 (R5). Tabel 2 menyusut menjadi dua eksekusi charter yang menunggu keputusan triase. Nomor BUG-007 tidak terpakai. |
