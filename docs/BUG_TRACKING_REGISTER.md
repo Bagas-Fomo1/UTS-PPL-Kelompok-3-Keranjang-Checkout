@@ -1,40 +1,91 @@
-# 📊 Register Rekapitulasi Bug (Bug Tracking Register)
+# Register Rekapitulasi Bug (Bug Tracking Register)
 **Mata Kuliah**: Praktikum Pengujian Perangkat Lunak  
 **Kelompok**: Kelompok 3  
 **Fokus**: Keranjang dan Checkout (+ Login & Beranda)  
-**Dokumentasi untuk**: Bab VI Laporan UTS
+**Dokumentasi untuk**: Bab VI Laporan UTS  
+**Terakhir diperbarui**: 22 Oktober 2026
 
 ---
 
-## Tabel Seluruh Cacat (Master Defect List)
+## Ringkasan Angka
 
-| ID Bug | Judul Bug (English / Indonesia) | Area / Fitur | Severity | Priority | Status | URL GitHub Issue | Test Case Kiwi Terkait | Reporter (Role) |
-| :---: | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **BUG-001** | Total Cart Calculation Displays NaN / Total Harga Keranjang Bernilai NaN | Keranjang | Major | P1 | Confirmed | [Issue #1](https://github.com/Bagas-Fomo1/UTS-PPL-Kelompok-3-Keranjang-Checkout/issues/1) | TC-012 | R2 |
-| **BUG-002** | Proceed to Checkout Button Disabled / Tombol Checkout Tidak Aktif | Checkout | Critical | P1 | Confirmed | [Issue #2](https://github.com/Bagas-Fomo1/UTS-PPL-Kelompok-3-Keranjang-Checkout/issues/2) | TC-015 | R1 |
-| **BUG-003** | Missing Mandatory Field Warning on Payment / Peringatan Form Pembayaran Kosong Tidak Muncul | Checkout | Minor | P3 | Confirmed | [Issue #3](https://github.com/Bagas-Fomo1/UTS-PPL-Kelompok-3-Keranjang-Checkout/issues/3) | TC-018 | R5 |
-| **BUG-004** | Cart Items Duplicated on Page Refresh / Item Keranjang Terduplikasi Saat Refresh | Keranjang | Major | P2 | Confirmed | [Issue #4](https://github.com/Bagas-Fomo1/UTS-PPL-Kelompok-3-Keranjang-Checkout/issues/4) | TC-020 | R3 |
-| **BUG-005** | Checkout Layout Broken on 375px Mobile Viewport / Tampilan Checkout Berantakan di HP 375px | Kompatibilitas | Minor | P2 | Confirmed | [Issue #5](https://github.com/Bagas-Fomo1/UTS-PPL-Kelompok-3-Keranjang-Checkout/issues/5) | TC-025 | R4 |
-| **BUG-006** | Payment Method Radio Button Missing Accessible Name / Radio Button Pembayaran Tanpa Label Aksesibilitas | Aksesibilitas | Minor | P3 | Confirmed | [Issue #6](https://github.com/Bagas-Fomo1/UTS-PPL-Kelompok-3-Keranjang-Checkout/issues/6) | TC-028 | R4 |
-| **BUG-007** | Special Characters in Billing Address Causes 500 Error / Karakter Khusus di Alamat Menyebabkan Error 500 | Checkout | Major | P2 | Confirmed | [Issue #7](https://github.com/Bagas-Fomo1/UTS-PPL-Kelompok-3-Keranjang-Checkout/issues/7) | TC-022 | R2 |
-| **BUG-008** | Negative Quantity Allowed via Manual Input / Kuantitas Negatif Diizinkan pada Keranjang | Keranjang | Major | P1 | Confirmed | [Issue #8](https://github.com/Bagas-Fomo1/UTS-PPL-Kelompok-3-Keranjang-Checkout/issues/8) | TC-023 | R5 |
-| **BUG-009** | Cart Session Lost After Login State Switch / Sesi Keranjang Hilang Setelah Login | Keranjang / Login | Major | P2 | Confirmed | [Issue #9](https://github.com/Bagas-Fomo1/UTS-PPL-Kelompok-3-Keranjang-Checkout/issues/9) | TC-010 | R1 |
-| **BUG-010** | Typos in Order Confirmation Page / Kesalahan Ejaan pada Halaman Konfirmasi Pesanan | Checkout | Trivial | P4 | Confirmed | [Issue #10](https://github.com/Bagas-Fomo1/UTS-PPL-Kelompok-3-Keranjang-Checkout/issues/10) | TC-030 | R3 |
+| Metrik | Nilai | Sumber |
+|---|---:|---|
+| Total eksekusi Test Run 15 | 32 | Kiwi TCMS TR-15 |
+| Eksekusi PASSED | 18 | Kiwi TCMS TR-15 |
+| Eksekusi FAILED | 14 | Kiwi TCMS TR-15 |
+| Issue GitHub terdaftar | 3 | BUG-001 s/d BUG-003 |
+| Eksekusi FAILED yang belum ber-issue | 8 | Lihat Tabel 2 |
+| Defect density (issue terdaftar / total test case) | 9,4% | 3 / 32 x 100% |
+
+> Register ini hanya memuat temuan yang benar-benar memiliki issue GitHub dan tertaut ke eksekusi FAIL di Kiwi TCMS. Entri lama pada register sebelumnya tidak dipertahankan karena tidak memiliki issue maupun eksekusi pendukung.
 
 ---
 
-## Rincian Alasan Severity dan Priority Tiap Bug
+## Tabel 1. Daftar Cacat Terdaftar (Master Defect List)
 
-### BUG-001: Total Cart Calculation Displays NaN
-* **Alasan Severity (Major)**: Kalkulasi total harga adalah fungsi inti e-commerce. Jika bernilai NaN, transaksi pembelian terhambat meskipun harga satuan produk masih tampil.
-* **Alasan Priority (P1)**: Memblokir Quality Gate rilis Sprint 5 karena pelanggan tidak dapat memverifikasi nominal tagihan sebelum checkout.
+| ID Bug | Judul Bug (English / Indonesia) | Area / Fitur | Severity | Priority | Status | URL GitHub Issue | Test Case & Eksekusi Kiwi | Reporter (Role) |
+| :---: | :--- | :--- | :---: | :---: | :---: | :--- | :--- | :---: |
+| **BUG-001** | Cart line total shows $00.00 for every quantity while grand total is correct / Total baris keranjang selalu $00.00 padahal Grand Total benar | Keranjang | Major | P2 | `needs-triage` | [Issue #8](https://github.com/Bagas-Fomo1/UTS-PPL-Kelompok-3-Keranjang-Checkout/issues/8) | TC-80 (TE-87), TC-82 (TE-89), TC-83 (TE-90), TC-84 (TE-91) | R2 - Aditya Agung Triwibowo |
+| **BUG-002** | Cart quantity is capped at 10 units while the reference build allows 99 / Kuantitas keranjang dibatasi 10 padahal acuan oracle mengizinkan 99 | Keranjang | Major | P2 | `needs-triage` | [Issue #9](https://github.com/Bagas-Fomo1/UTS-PPL-Kelompok-3-Keranjang-Checkout/issues/9) | TC-81 (TE-88) | R2 - Aditya Agung Triwibowo |
+| **BUG-003** | Cart accepts quantity 0 and keeps a $0.00 order line without any validation / Keranjang menerima kuantitas 0 dan menyisakan baris pesanan $00.00 tanpa validasi | Keranjang | Major | P2 | `needs-triage` | [Issue #10](https://github.com/Bagas-Fomo1/UTS-PPL-Kelompok-3-Keranjang-Checkout/issues/10) | TC-79 (TE-86) | R2 - Aditya Agung Triwibowo |
 
-### BUG-002: Proceed to Checkout Button Disabled
-* **Alasan Severity (Critical)**: Pengguna sama sekali tidak dapat melanjutkan ke proses pembayaran meskipun semua prasyarat keranjang terpenuhi (jalan buntu tanpa workaround).
-* **Alasan Priority (P1)**: Blocker mutlak. Build rilis tidak boleh diluncurkan jika pembeli tidak bisa melakukan checkout.
+Catatan: ketiga issue masih berstatus `needs-triage` sehingga severity dan priority di atas adalah usulan pelapor dan belum dikunci oleh R5/R1.
 
-### BUG-003: Missing Mandatory Field Warning on Payment
-* **Alasan Severity (Minor)**: Alur pembayaran tetap berjalan ketika data valid dimasukkan; hanya pesan validasi field wajib yang tidak informatif saat field dikosongkan.
-* **Alasan Priority (P3)**: Tidak memblokir alur utama pembayaran, dapat diperbaiki pada iterasi perbaikan minor berikutnya.
+---
 
-*(Tambahkan penjelasan alasan untuk seluruh bug yang dilaporkan kelompok)*
+## Tabel 2. Eksekusi FAILED yang Belum memiliki Issue
+
+Eksekusi berikut sudah berstatus FAILED di TR-15 tetapi belum dilaporkan sebagai issue GitHub. Pemilik eksekusi perlu membuat laporan agar rasio 14 FAILED terhadap issue yang ada tidak menimbulkan pertanyaan saat responsi.
+
+| Test Execution | Test Case | Judul Test Case | Penguji | Status | Tindak Lanjut |
+| :---: | :---: | :--- | :---: | :---: | :--- |
+| TE-84 | TC-77 | [R3-CH-01] Exploratory Testing - Add to Cart dan Pengelolaan Keranjang | nuzul | FAILED | Lapor oleh R3, verifikasi R5 |
+| TE-85 | TC-78 | [R3-CH-02] Exploratory Testing - Checkout dan Validasi Pesanan | nuzul | FAILED | Lapor oleh R3, verifikasi R5 |
+| TE-99 | TC-92 | [T3-NEG-04] Postcode 300 karakter (batas panjang tidak dibatasi) | bagas | FAILED | Lapor oleh R5 |
+| TE-103 | TC-96 | [T3-NEG-08] Nilai negatif pada field quantity | bagas | FAILED | Lapor oleh R5 (akar masalah sama dengan BUG-003, pertimbangkan penggabungan) |
+| TE-107 | TC-100 | [T4-FLOW-04] Ubah kuantitas keranjang dan kalkulasi total | christian | FAILED | Lapor oleh R1, cek irisan dengan BUG-001 |
+| TE-108 | TC-101 | [T4-FLOW-05] Hapus item dari keranjang | christian | FAILED | Lapor oleh R1 |
+| TE-113 | TC-106 | [T7-A11Y-01] Audit Aksesibilitas Otomatis Halaman Detail Produk | annisa | FAILED | Lapor oleh R4 |
+| TE-114 | TC-107 | [T7-A11Y-02] Audit Aksesibilitas Otomatis Halaman Formulir | annisa | FAILED | Lapor oleh R4 |
+
+---
+
+## Rincian Alasan Severity dan Priority
+
+### BUG-001: Cart line total shows $00.00
+* **Alasan Severity (Major)**: Kolom Total baris adalah angka moneter yang dipakai pengguna memverifikasi biaya per item. Nilainya salah pada seluruh kuantitas yang diuji (1, 9, 10, 99), tetapi alur checkout masih dapat diselesaikan karena Grand Total benar sehingga tidak mencapai Critical.
+* **Alasan Priority (P2)**: Menyangkut nominal pembayaran pada alur transaksi utama Sprint 5, tetapi tidak memblokir penyelesaian checkout.
+* **Akar masalah**: kolom Total baris tidak dihitung ulang dari Price x Quantity; satu perbaikan menutup empat test case sekaligus.
+
+### BUG-002: Cart quantity capped at 10
+* **Alasan Severity (Major)**: Pembelian 11 unit yang sah menurut acuan (rentang 1-99) dipotong menjadi 10 tanpa pemberitahuan, sehingga pengguna tidak dapat menyelesaikan pesanan sesuai jumlah yang diinginkan. Masih ada workaround berupa penambahan baris terpisah.
+* **Alasan Priority (P2)**: Menghambat skenario penjualan grosir dan menyangkut integritas nilai pesanan, tetapi tidak memblokir seluruh alur checkout.
+* **Akar masalah**: atribut `max="10"` pada kontrol keranjang, sedangkan kontrol kuantitas di halaman detail produk pada aplikasi yang sama sudah memakai `max="99"`.
+
+### BUG-003: Cart accepts quantity 0
+* **Alasan Severity (Major)**: Kuantitas 0 berada di bawah batas minimum transaksi (1 unit) namun diterima, item tetap bertahan, dan tombol proceed-1 tetap aktif. Dampaknya integritas transaksi, tetapi pengguna masih dapat memperbaiki nilainya secara manual.
+* **Alasan Priority (P2)**: Menyangkut validasi batas bawah pada alur transaksi utama, setara dengan laporan kuantitas negatif (TE-103) yang belum ber-issue.
+* **Akar masalah**: tidak ada validasi batas bawah pada `[data-test=product-quantity]` (`min="0"`).
+
+---
+
+## Distribusi Cacat Terdaftar
+
+| Dimensi | Distribusi |
+| :--- | :--- |
+| Severity | Major: 3 |
+| Priority | P2: 3 |
+| Area | Keranjang: 3 |
+| Teknik pengujian | Boundary Value Analysis (T2): 3 |
+| Status alur | `needs-triage`: 3 |
+
+Kesimpulan sementara: seluruh cacat terdaftar terkonsentrasi pada satu komponen, yaitu kontrol kuantitas keranjang (`[data-test=product-quantity]`) dan kolom Total baris. Ini menunjukkan area keranjang sebagai titik paling rawan pada build Sprint 5 dan layak menjadi prioritas perbaikan sebelum rilis.
+
+---
+
+## Riwayat Perubahan Register
+
+| Tanggal | Perubahan |
+| :--- | :--- |
+| 22 Oktober 2026 | Register disusun ulang mengikuti issue nyata di repositori: BUG-001 s/d BUG-003. Entri lama BUG-001 s/d BUG-010 dihapus karena tidak memiliki issue maupun eksekusi pendukung. Ditambahkan Tabel 2 berisi eksekusi FAILED yang belum dilaporkan. |
