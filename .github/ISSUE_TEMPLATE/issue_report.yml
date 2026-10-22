@@ -1,0 +1,350 @@
+name: "📋 Issue Report (Format Laporan Temuan)"
+description: "Format laporan temuan standar Kelompok 3 - CilacapTools. Lebih lengkap dari bug report: klasifikasi, dampak, traceability, dan gerbang validitas R5."
+title: "[BUG-XXX]: [English Title] / [Judul Bahasa Indonesia]"
+labels: ["status:new", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 📋 Issue Report - Kelompok 3 (CilacapTools)
+
+        Formulir ini adalah **format laporan temuan resmi**. Isi berurutan; setiap bagian bertanda **wajib** akan divalidasi otomatis.
+
+        **Empat syarat agar laporan diterima (T9 - Manajemen Cacat):**
+        1. **Reproducible** - anggota lain bisa mengulang hanya dari langkah tertulis di Bagian 5.
+        2. **Bukan duplikat** - akar masalah sama digabung jadi satu laporan, halaman terdampak didaftarkan di Bagian 3.
+        3. **Berbeda dari acuan** - Expected Result wajib merujuk `practicesoftwaretesting.com` atau aturan eksplisit pada UI.
+        4. **Berbukti** - screenshot layar penuh; rekaman bila intermiten; console log bila ada error JavaScript.
+
+        > Status alur: `needs-triage` -> diverifikasi R5 -> `status:triaged` -> dikerjakan -> `ready-for-test` -> `status:verified`.
+
+  - type: markdown
+    attributes:
+      value: "---\n## 1. Identitas & Klasifikasi"
+
+  - type: input
+    id: issue_id
+    attributes:
+      label: "ID Issue (wajib)"
+      description: "Nomor urut temuan kelompok, lanjutkan dari nomor terakhir yang ada di repositori"
+      placeholder: "BUG-006"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: reporter_role
+    attributes:
+      label: "Role Pelapor (wajib)"
+      description: "Pilih peran resmi Anda sesuai lembar penetapan role"
+      options:
+        - "R1 - QA Lead & Test Manager"
+        - "R2 - Test Analyst"
+        - "R3 - Exploratory Tester"
+        - "R4 - Compatibility & Accessibility Tester"
+        - "R5 - Defect Management Engineer"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: issue_category
+    attributes:
+      label: "Kategori Issue (wajib)"
+      description: "Bedakan cacat fungsional dari temuan non-fungsional agar triage tepat sasaran"
+      options:
+        - "Bug - Cacat fungsional (perilaku menyimpang dari acuan)"
+        - "Defect Regression - Cacat yang muncul kembali setelah perbaikan"
+        - "Data / Content Defect - Teks, label, atau nilai data salah"
+        - "Compatibility Defect - Perbedaan lintas browser atau viewport"
+        - "Accessibility Defect - Pelanggaran WCAG 2.2"
+        - "Improvement - Usulan penyempurnaan (bukan cacat)"
+        - "Question - Butuh klarifikasi perilaku sistem"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: "Area / Fitur Terdampak (wajib)"
+      description: "Pilih area utama tempat temuan berada"
+      options:
+        - "Beranda (Home)"
+        - "Autentikasi (Login / Logout)"
+        - "Keranjang (Cart)"
+        - "Checkout - Alur Pengiriman & Alamat"
+        - "Checkout - Alur Pembayaran & Kalkulasi Total"
+        - "Checkout - Konfirmasi & Invoice"
+        - "Lainnya"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: technique
+    attributes:
+      label: "Teknik Pengujian (wajib)"
+      description: "Teknik yang mengungkap temuan ini"
+      options:
+        - "Equivalence Partitioning (T2)"
+        - "Boundary Value Analysis (T2)"
+        - "Error Guessing (T3)"
+        - "Negative Testing (T3)"
+        - "Edge Case Testing (T3)"
+        - "Exploratory Testing / SBTM (T5)"
+        - "Cross-Browser Testing (T6)"
+        - "Mobile Responsive Testing (T6)"
+        - "Accessibility Audit (T7)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: defect_type
+    attributes:
+      label: "Tipe Teknis Cacat (wajib)"
+      description: "Klasifikasi teknis untuk memudahkan penentuan prioritas perbaikan"
+      options:
+        - "Financial Calculation"
+        - "Functional Bug"
+        - "Data Validation"
+        - "State Management"
+        - "Crash / Unhandled Exception"
+        - "UI / UX Defect"
+        - "Compatibility"
+        - "Accessibility Barrier"
+    validations:
+      required: true
+
+  - type: input
+    id: affected_url
+    attributes:
+      label: "URL Halaman Terdampak (wajib)"
+      description: "URL spesifik tempat temuan dapat direproduksi"
+      placeholder: "https://with-bugs.practicesoftwaretesting.com/#/checkout"
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "---\n## 2. Dampak & Prioritas"
+
+  - type: textarea
+    id: impact_scope
+    attributes:
+      label: "Dampak & Cakupan (wajib)"
+      description: "Siapa yang terdampak, seberapa sering, dan seberapa luas cakupannya"
+      placeholder: |
+        - Pengguna terdampak: seluruh pembeli yang mengubah kuantitas di keranjang.
+        - Frekuensi: selalu (100% reproduksi).
+        - Cakupan: semua kuantitas yang diuji (1, 9, 10, 99).
+        - Konsekuensi: pengguna tidak dapat memverifikasi biaya per item sebelum membayar.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: "Severity - Dampak Teknis (wajib)"
+      description: "Severity menilai kerusakan sistem, bukan urgensi bisnis"
+      options:
+        - "Blocker - Sistem tidak dapat dipakai, pengujian/rilis berhenti total"
+        - "Critical - Alur utama gagal total tanpa workaround"
+        - "Major - Fungsi inti salah, masih ada workaround"
+        - "Moderate - Fitur sekunder gagal atau salah kalkulasi kecil"
+        - "Minor - Ketidaknyamanan kecil, salah pesan validasi, layout fungsional"
+        - "Trivial - Typo, estetika, atau inkonsistensi visual tanpa dampak fungsi"
+    validations:
+      required: true
+
+  - type: textarea
+    id: severity_reason
+    attributes:
+      label: "Alasan Severity (wajib)"
+      description: "Hubungkan dengan dampak teknis yang sudah dijelaskan pada bagian Dampak & Cakupan"
+      placeholder: "Dipilih Major karena angka moneter per baris salah tampil sehingga biaya tidak dapat diverifikasi, namun Grand Total benar dan checkout masih dapat diselesaikan."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "Priority - Urgensi Bisnis (wajib)"
+      description: "Priority menilai kapan harus diperbaiki, bukan seberapa parah"
+      options:
+        - "P1 - Urgent (blokir rilis / quality gate)"
+        - "P2 - High (harus diperbaiki sebelum rilis pada sprint berjalan)"
+        - "P3 - Medium (dapat ditunda ke siklus berikutnya)"
+        - "P4 - Low (kosmetik / nice-to-have)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: priority_reason
+    attributes:
+      label: "Alasan Priority (wajib)"
+      description: "Kaitkan dengan kriteria Quality Gate Sprint 5"
+      placeholder: "P2 karena menyangkut nominal pembayaran pada alur utama, tetapi tidak memblokir penyelesaian transaksi."
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "---\n## 3. Lingkungan & Cakupan Halaman"
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: "Lingkungan Pengujian (wajib)"
+      description: "Spesifikasi perangkat, browser, viewport, build, dan akun uji (jangan tulis password)"
+      value: |
+        - **OS**: Windows 10 Pro 22H2 (64-bit)
+        - **Browser**: Google Chrome 141.0.7390.55 (64-bit)
+        - **Viewport**: Desktop (1262x568)
+        - **Build**: Sprint 5 Staging (AUT with-bugs) - Build #14
+        - **Acuan normal (Oracle)**: https://practicesoftwaretesting.com
+        - **Akun uji**: akun dummy terdaftar (tanpa password)
+    validations:
+      required: true
+
+  - type: textarea
+    id: affected_pages
+    attributes:
+      label: "Halaman / Varian Terdampak (wajib)"
+      description: "Bila akar masalah sama muncul di beberapa halaman, laporkan SATU issue dan daftarkan semuanya di sini"
+      placeholder: |
+        - `#/checkout` Step 1 CART - seluruh kuantitas (1, 9, 10, 99)
+        - Tidak berdampak pada Grand Total maupun halaman detail produk
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "---\n## 4. Reproduksi & Perbandingan Acuan"
+
+  - type: textarea
+    id: preconditions
+    attributes:
+      label: "Prasyarat (wajib)"
+      description: "Kondisi awal yang harus disiapkan sebelum langkah dilakukan"
+      placeholder: |
+        1. Pengguna telah login dengan akun dummy terdaftar.
+        2. Keranjang berisi 1 unit Combination Pliers ($14.15).
+        3. Halaman berada pada #/checkout step 1 CART.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: "Langkah Reproduksi (wajib)"
+      description: "Bernomor, satu aksi per baris, tanpa kata 'coba'. Harus bisa diikuti orang lain tanpa bertanya."
+      placeholder: |
+        1. Buka `#/checkout`.
+        2. Fokus ke field `[data-test="product-quantity"]`.
+        3. Ketik `1` lalu tekan Tab.
+        4. Baca kolom Total baris `[data-test="line-price"]` dan Grand Total `[data-test="cart-total"]`.
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual_result
+    attributes:
+      label: "Hasil Aktual - AUT with-bugs (wajib)"
+      description: "Nilai atau teks persis seperti di layar. Sertakan angka, bukan tafsiran."
+      placeholder: "Total baris menampilkan $00.00 sementara Grand Total $14.15 sehingga kedua nilai tidak sinkron."
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_result
+    attributes:
+      label: "Hasil yang Diharapkan - Acuan Normal (wajib)"
+      description: "Wajib merujuk https://practicesoftwaretesting.com atau aturan eksplisit pada UI"
+      placeholder: "Pada acuan, qty 1 menampilkan Total baris $14.15 dan Grand Total $14.15 (konsisten)."
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "---\n## 5. Bukti"
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: "Daftar Bukti (wajib)"
+      description: "Satu baris per berkas, sebutkan apa yang ditunjukkan masing-masing"
+      placeholder: |
+        - evidence-uts/Test-Run/TC80/01_cart_qty1.png - baris keranjang qty 1, Total baris $00.00
+        - evidence-uts/Test-Run/TC80/02_line_total_vs_grand_total.png - Grand Total $14.15 di footer
+        - Console: tidak ada error JavaScript
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: evidence_types
+    attributes:
+      label: "Jenis Bukti yang Dilampirkan"
+      description: "Centang yang tersedia. Bukti wajib bila situasinya relevan."
+      options:
+        - label: "Screenshot layar penuh (bukan crop)"
+        - label: "Screen recording (wajib bila bug intermiten atau bergantung urutan interaksi)"
+        - label: "Console log (wajib bila ada error JavaScript / HTTP 5xx)"
+        - label: "DOM / API inspection (markup elemen, respons endpoint)"
+
+  - type: markdown
+    attributes:
+      value: "---\n## 6. Traceability & Duplikasi"
+
+  - type: input
+    id: kiwi_link
+    attributes:
+      label: "Tautan Eksekusi Kiwi TCMS (wajib)"
+      description: "Tempelkan URL eksekusi beserta ID test case. Status eksekusi harus FAILED."
+      placeholder: "https://pdt-confident-sleeve-slim.trycloudflare.com/runs/15/executions/87/ (TC-80 - T2-BVA-02)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: duplicate_check
+    attributes:
+      label: "Pemeriksaan Duplikasi (wajib)"
+      description: "Buktikan laporan ini bukan duplikat"
+      placeholder: |
+        - Kata kunci yang dicari: `line total`, `line-price`, `subtotal`
+        - Hasil: tidak ada issue terbuka dengan akar masalah yang sama
+        - Issue terkait: #2 (field sama, akar masalah berbeda - tidak digabung)
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "---\n## 7. Penutup"
+
+  - type: textarea
+    id: proposed_fix
+    attributes:
+      label: "Usulan Perbaikan (opsional)"
+      description: "Saran teknis singkat untuk developer, bukan kewajiban"
+      placeholder: "Hitung ulang Total baris dari Price x Quantity pada setiap event change kuantitas, dan gunakan sumber kalkulasi yang sama dengan Grand Total."
+
+  - type: textarea
+    id: triage_notes
+    attributes:
+      label: "Notulen Triage Meeting (diisi R5/R1)"
+      description: "2-3 kalimat: keputusan, alasan dampak, tindakan lanjutan"
+      placeholder: "Bug dikonfirmasi pada triage DD/MM/2026. Severity disepakati Major dan Priority P2 karena menyangkut nominal pembayaran namun tidak memblokir checkout. Ditugaskan pada sprint berjalan."
+
+  - type: checkboxes
+    id: validity_gate
+    attributes:
+      label: "Gerbang Validitas - Verifikasi R5 (semua wajib)"
+      options:
+        - label: "Dapat direproduksi anggota lain hanya dari langkah tertulis di Bagian 4."
+          required: true
+        - label: "Expected Result merujuk build acuan atau aturan eksplisit pada UI."
+          required: true
+        - label: "Tidak duplikat; akar masalah sama digabung dan halaman terdampak didaftarkan."
+          required: true
+        - label: "Bukti sesuai aturan: layar penuh, rekaman bila intermiten, console log bila error JS."
+          required: true
+        - label: "Severity dan Priority memiliki alasan yang objektif serta saling konsisten."
+          required: true
+        - label: "Tertaut ke eksekusi FAIL di Kiwi TCMS dan URL issue ini dikomentarkan pada eksekusi tersebut."
+          required: true
