@@ -1,0 +1,18 @@
+INSPEKSI DOM - Kontrol kuantitas keranjang
+Halaman: https://with-bugs.practicesoftwaretesting.com/#/checkout (step 1 CART)
+Diambil: 22 Oktober 2026
+
+# Kontrol kuantitas baris keranjang
+<input type="number" min="0" max="10" data-test="product-quantity" class="form-control quantity">
+
+# Pembanding pada halaman detail produk di aplikasi yang sama
+<input type="number" min="1" max="99" data-test="quantity">
+
+# Baris keranjang
+<td data-test="product-title">Combination Pliers</td>
+<td data-test="product-price">$14.15</td>
+<td data-test="line-price">$00.00</td>
+<td data-test="cart-total">$14.15</td>
+
+Kesimpulan: batas maksimum pada keranjang (10) berbeda dengan halaman detail produk dan acuan (99),
+dan kolom Total baris tidak pernah dihitung ulang (selalu $00.00) sementara Grand Total benar.

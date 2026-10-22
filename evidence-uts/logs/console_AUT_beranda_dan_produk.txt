@@ -1,0 +1,14 @@
+LOG KONSOL BROWSER - AUT with-bugs.practicesoftwaretesting.com
+Diambil: 22 Oktober 2026, Chrome 141.0.7390.55, viewport 1262x568
+
+# Beranda (#/)
+[info] Page loaded
+[hasil] Tidak ada error JavaScript (tidak ada TypeError, ReferenceError, maupun HTTP 5xx pada Console).
+
+# Halaman detail produk (#/product/1)
+[hasil] Tidak ada error JavaScript saat halaman dimuat dan saat tombol add-to-cart diklik.
+
+# Halaman keranjang (#/checkout step 1)
+[hasil] Tidak ada error JavaScript saat kuantitas diubah dan saat tombol hapus diklik.
+[catatan] Cacat yang ditemukan pada halaman ini bersifat kalkulasi nilai dan validasi input, bukan exception runtime,
+sehingga tidak menghasilkan entri error pada Console.
