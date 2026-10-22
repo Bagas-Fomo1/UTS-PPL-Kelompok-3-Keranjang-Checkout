@@ -1,4 +1,4 @@
-name: "📋 Issue Report (Format Laporan Temuan)"
+name: "Issue Report (Format Laporan Temuan)"
 description: "Format laporan temuan standar Kelompok 3 - CilacapTools. Lebih lengkap dari bug report: klasifikasi, dampak, traceability, dan gerbang validitas R5."
 title: "[BUG-XXX]: [English Title] / [Judul Bahasa Indonesia]"
 labels: ["status:new", "needs-triage"]
@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## 📋 Issue Report - Kelompok 3 (CilacapTools)
+        ## Issue Report - Kelompok 3 (CilacapTools)
 
         Formulir ini adalah **format laporan temuan resmi**. Isi berurutan; setiap bagian bertanda **wajib** akan divalidasi otomatis.
 
